@@ -10,7 +10,13 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
 {
     public class PrestamoMap
     {
+        private ModelBuilder modelBuilder;
+
         public PrestamoMap(ModelBuilder modelBuilder)
+        {
+            this.modelBuilder = modelBuilder;   
+        }
+        public void MapClass()
         {
 
             modelBuilder.Entity<Prestamo>(entity =>

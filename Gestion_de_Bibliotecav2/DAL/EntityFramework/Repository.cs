@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {

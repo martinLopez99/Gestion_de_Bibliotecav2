@@ -7,7 +7,12 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
 {
     public class LibroMap
     {
+        private ModelBuilder modelBuilder;
         public LibroMap(ModelBuilder modelBuilder)
+        {
+            this.modelBuilder = modelBuilder;
+        }
+        public void MapClass()
         {
             modelBuilder.Entity<Libro>(entity =>
             {

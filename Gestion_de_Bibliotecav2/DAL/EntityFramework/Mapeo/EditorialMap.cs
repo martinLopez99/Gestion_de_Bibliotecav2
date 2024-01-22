@@ -8,7 +8,12 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
 {
     public class EditorialMap
     {
+        private ModelBuilder modelBuilder;
         public EditorialMap(ModelBuilder modelBuilder)
+        {
+            this.modelBuilder = modelBuilder;
+        }
+        public void MapClass()
         {
             modelBuilder.Entity<Editorial>(entity =>
             {

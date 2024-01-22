@@ -10,7 +10,12 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
 {
     public class UsuarioMap
     {
+        private ModelBuilder modelBuilder;
         public UsuarioMap(ModelBuilder modelBuilder)
+        {
+            this.modelBuilder = modelBuilder;  
+        }
+        public void MapClass()
         {
 
             modelBuilder.Entity<Usuario>(entity =>

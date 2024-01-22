@@ -1,9 +1,10 @@
-﻿using System.Data.Entity.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Gestion_de_Bibliotecav2.Migraciones
 {
-    public partial class Inicializacion : DbMigration
+    public partial class Inicializacion// : DbMigration
     {
+        /*
         public override void Up()
         {
             CreateTable(
@@ -135,6 +136,7 @@ namespace Gestion_de_Bibliotecav2.Migraciones
                 .Index(t => t.PrestamoID);
         }
 
+        
         public override void Down()
         {
             DropForeignKey("dbo.Notificacion", "PrestamoID", "dbo.Prestamo");
@@ -164,5 +166,6 @@ namespace Gestion_de_Bibliotecav2.Migraciones
             DropTable("dbo.Usuario");
             DropTable("dbo.Prestamo");
         }
+    */
     }
 }

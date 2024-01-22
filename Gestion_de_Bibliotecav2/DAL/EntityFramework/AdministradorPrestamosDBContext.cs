@@ -1,30 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using Gestion_de_Bibliotecav2.Dominio;
 using Gestion_de_Bibliotecav2.Migraciones;
+using Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo;
+using System.Reflection.Emit;
 
 namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {
     public class AdministradorPrestamosDBContext : DbContext
     {
-        public AdministradorPrestamosDBContext() : base("Gestion_De_Biblioteca")
+        /*public AdministradorPrestamosDBContext() : base("Gestion_De_Biblioteca")
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<AdministradorPrestamosDBContext, Configuracion>());
-        }
+        }*/
 
-        public IDbSet<Prestamo> Prestamos { get; set; }
+        public DbSet<Prestamo> Prestamos { get; set; }
 
-        public IDbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
-        public IDbSet<Ejemplar> Ejemplares { get; set; }
+        public DbSet<Ejemplar> Ejemplares { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder pModelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            pModelBuilder.Configurations.AddFromAssembly(System.Reflection.Assembly.GetExecutingAssembly());
+            optionsBuilder.UseMySQL("server=127.0.0.1;database=tallerc#;user=root;password=Martolomeo23$");
 
-            base.OnModelCreating(pModelBuilder);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            Mapeo(modelBuilder);
+        }
+
+        private void Mapeo(ModelBuilder modelBuilder)
+        {
+            AutorMap autorMap = new AutorMap(modelBuilder);
+            autorMap.MapClass();
+
+            CategoriaMap categoriaMap = new CategoriaMap(modelBuilder);
+            categoriaMap.MapClass();
+
+            EditorialMap editorialMap = new EditorialMap(modelBuilder); 
+            editorialMap.MapClass();
+
+            EjemplarMap ejemplarMap = new EjemplarMap(modelBuilder);
+            ejemplarMap.MapClass();
+
+            LibroMap libroMap = new LibroMap(modelBuilder); 
+            libroMap.MapClass();
+
+            PrestamoMap prestamoMap = new PrestamoMap(modelBuilder);
+            prestamoMap.MapClass();
+        
+            UsuarioMap usuarioMap = new UsuarioMap(modelBuilder);   
+            usuarioMap.MapClass();
+        }
+
+
     }
 }

@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using System.Text;
 using Gestion_de_Bibliotecav2.DAL.EntityFramework;
 using System;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using System.Linq;
-//using Microsoft.EntityFrameworkCore;
-//using MySQL.EntityFrameworkCore.Extensions;
 
 
 namespace Gestion_de_Bibliotecav2.Migraciones
 {
 
-    internal sealed class Configuracion : DbMigrationsConfiguration<Gestion_de_Bibliotecav2.DAL.EntityFramework.AdministradorPrestamosDBContext>
+    internal sealed class Configuracion // : DbMigrationsConfiguration<Gestion_de_Bibliotecav2.DAL.EntityFramework.AdministradorPrestamosDBContext>
     {
         public Configuracion()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "Gestion_de_Biblioteca.DAL.EntityFramework.AdministradorPrestamosDBContext";
+            //AutomaticMigrationsEnabled = false;
+            //ContextKey = "Gestion_de_Biblioteca.DAL.EntityFramework.AdministradorPrestamosDBContext";
         }
-
+        /*
         protected override void OnConfiguring(AdministradorPrestamosDBContext optionsBuilder) //VER
         {
             // Utilizando MySQL
@@ -33,6 +31,6 @@ namespace Gestion_de_Bibliotecav2.Migraciones
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
-        }
+        }*/
     }
 }

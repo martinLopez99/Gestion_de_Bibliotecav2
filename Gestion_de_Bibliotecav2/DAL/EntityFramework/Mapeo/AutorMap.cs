@@ -7,7 +7,13 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
 {
     public class AutorMap
     {
-        public AutorMap(ModelBuilder modelBuilder)
+        private ModelBuilder modelBuilder;
+        public AutorMap(ModelBuilder modelBuilder) 
+        {
+            this.modelBuilder = modelBuilder;
+        }   
+
+        public void MapClass()
         {
 
             modelBuilder.Entity<Autor>(entity =>
