@@ -12,7 +12,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private Prestamo iPrestamo;
         //private readonly ISmtpClient smtpClient; // Cambiando a la interfaz MailKit
 
-
+        public Notificacion() { }
         public Notificacion(Prestamo pPrestamo) // Cambiando el tipo de parámetro
         {
             iFechaHoraEnvio = DateTime.Now;

@@ -7,6 +7,8 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		private int iID;
 		private string iNombre;
 
+		public Categoria() { }
+
 		public Categoria(string pNombre)
 		{
 			iNombre = pNombre;

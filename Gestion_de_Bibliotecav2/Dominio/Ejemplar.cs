@@ -13,6 +13,8 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		private Boolean iDisponibilidad;
 		private Libro iLibro;
 
+		public Ejemplar() { }
+
 		public Ejemplar(int pCodigo, Libro pLibro)
 		{
 			iCodigo = pCodigo;
@@ -37,6 +39,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		public DateTime FechaAlta
 		{
 			get { return this.iFechaAlta; }
+			set { this.iFechaAlta = value;}
 		}
 
 		public DateTime FechaBaja

@@ -10,5 +10,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private Categoria Categoria { get; set; }
 
         public Libro_Categoria() { }
+
+        //Faltan metodos?
     }
 }

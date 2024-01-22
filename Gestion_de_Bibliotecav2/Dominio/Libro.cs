@@ -11,8 +11,10 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		private DateTime iFechaPublicacion;
 		public Editorial iEditorial;
 
-		public virtual ICollection<Libro_Autor> Libro_Autor {get; set;}
-		public virtual ICollection<Libro_Categoria> Libro_Categoria { get; set; }
+		//public virtual ICollection<Libro_Autor> Libro_Autor {get; set;}
+		//public virtual ICollection<Libro_Categoria> Libro_Categoria { get; set; }
+
+		public Libro() { }
 
 		public Libro(string pISBN, string pNombre, DateTime pFechaPublicacion)
 		{
@@ -30,16 +32,19 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		public string ISBN
 		{
 			get { return this.iISBN; }
+			set {this.iISBN = value; }
 		}
 
 		public string Nombre
 		{
 			get { return this.iNombre; }
+			set { this.iNombre = value;}
 		}
 
 		public DateTime FechaPublicacion
 		{
 			get { return this.iFechaPublicacion; }
+			set { this.iFechaPublicacion = value; }
 		}
 
 		public Editorial Editorial

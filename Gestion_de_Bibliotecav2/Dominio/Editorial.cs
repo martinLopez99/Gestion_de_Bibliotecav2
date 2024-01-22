@@ -9,6 +9,8 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		private string iDireccion;
 		private int iTelefono;
 
+		public Editorial() { }
+
 		public Editorial(string pNombre, string pDireccion, int pTelefono)
 		{
 			iNombre = pNombre;

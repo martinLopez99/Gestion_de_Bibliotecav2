@@ -15,6 +15,8 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private string iEmail;
         private int iLibrosPrestados;
 
+        public Usuario() { }
+
         public Usuario(int pDNI, string pNombre, string pDireccion, int pTelefono, string pEmail)
         {
             iDNI = pDNI;

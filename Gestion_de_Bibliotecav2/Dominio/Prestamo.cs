@@ -13,6 +13,8 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private Ejemplar iEjemplar;
         private Usuario iUsuario;
 
+        public Prestamo() { }
+
         public Prestamo(Usuario pUsuario, Ejemplar pEjemplar)
         {
             iFechaEntrega = DateTime.Now;
@@ -31,11 +33,13 @@ namespace Gestion_de_Bibliotecav2.Dominio
         public DateTime FechaEntrega
         {
             get { return this.iFechaEntrega; }
+            set {this.iFechaEntrega = value; }
         }
 
         public DateTime FechaVencimiento
         {
             get { return this.iFechaVencimiento; }
+            set {this.iFechaVencimiento = value; }
         }
 
         public DateTime? FechaDevolucion
@@ -47,11 +51,13 @@ namespace Gestion_de_Bibliotecav2.Dominio
         public Usuario Usuario
         {
             get { return this.iUsuario; }
+            set {this .iUsuario = value; }
         }
 
         public Ejemplar Ejemplar
         {
             get { return this.iEjemplar; }
+            set { this.iEjemplar = value;}
         }
     }
 }

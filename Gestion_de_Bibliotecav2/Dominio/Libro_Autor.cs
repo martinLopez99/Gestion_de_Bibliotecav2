@@ -10,5 +10,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
         public Autor Autor { get; set; }
 
         public Libro_Autor() { }
+
+        //Faltan metodos?
     }
 }

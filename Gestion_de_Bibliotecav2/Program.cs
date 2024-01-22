@@ -1,4 +1,5 @@
 using ConnectionDBTest;
+using Gestion_de_Bibliotecav2.DAL.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Text;
@@ -10,8 +11,11 @@ namespace mysqlefcore
     {
         static void Main(string[] args)
         {
-            InsertData();
-            PrintData();
+            var context = new AdministradorPrestamosDBContext();
+            context.Database.EnsureCreated(); 
+
+            //InsertData();
+            //PrintData();
         }
 
         private static void InsertData()

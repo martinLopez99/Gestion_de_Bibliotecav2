@@ -8,7 +8,9 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		private int iID;
 		private string iNombre;
 
-		public Autor(string pNombre)
+		public Autor(){}
+
+        public Autor(string pNombre)
 		{
 			iNombre = pNombre;
 		}

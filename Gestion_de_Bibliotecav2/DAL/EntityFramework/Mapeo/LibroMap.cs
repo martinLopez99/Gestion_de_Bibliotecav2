@@ -25,12 +25,12 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
                       .IsRequired();
                 entity.Property(libro => libro.FechaPublicacion)
                       .IsRequired();
-                entity.HasOne(libro => libro.Editorial)
-                      .WithMany()
-                      .HasForeignKey(libro => libro.Editorial.ID);
-                entity.HasMany(libro => libro.Libro_Autor)
-                      .WithMany();
-                entity.HasMany(libro => libro.Libro_Categoria);
+                //entity.HasOne(libro => libro.Editorial)
+                //      .WithMany()
+                //      .HasForeignKey(libro => libro.Editorial.ID);
+                //entity.HasMany(libro => libro.Libro_Autor)
+                //      .WithMany();
+                //entity.HasMany(libro => libro.Libro_Categoria);
             });
 
 
