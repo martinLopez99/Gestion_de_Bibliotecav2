@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Data.Entity.ModelConfiguration;
 using Gestion_de_Bibliotecav2.Dominio;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,8 +20,8 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
                       .IsRequired();
                 entity.Property(ejemplar => ejemplar.FechaAlta)
                       .IsRequired();
-                entity.Property(ejemplar => ejemplar.FechaBaja);
-                      //.IsOptional(); Creo que si lo dejas vacio, por defecto queda como opcional
+                entity.Property(ejemplar => ejemplar.FechaBaja)
+                      .IsRequired(false);
                 entity.Property(ejemplar => ejemplar.Disponibilidad)
                       .IsRequired();
                 entity.HasOne(ejemplar => ejemplar.Libro)

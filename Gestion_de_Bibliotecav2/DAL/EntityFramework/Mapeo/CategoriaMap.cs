@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
-//using System.Data.Entity.ModelConfiguration;
 using Gestion_de_Bibliotecav2.Dominio;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +11,8 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
         {
             modelBuilder.Entity<Categoria>(entity => {
                 entity.HasKey(categoria => categoria.ID);
-                entity.Property(categoria => categoria.ID);
+                entity.Property(categoria => categoria.ID)
+                      .ValueGeneratedOnAdd();
                 entity.Property(categoria => categoria.Nombre);
             });
 

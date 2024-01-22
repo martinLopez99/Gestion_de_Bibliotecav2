@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
-//using System.Data.Entity.ModelConfiguration;
 using Gestion_de_Bibliotecav2.Dominio;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +12,8 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
             modelBuilder.Entity<Libro>(entity =>
             {
                 entity.HasKey(libro => libro.ID);
+                entity.Property(libro => libro.ID)
+                      .ValueGeneratedOnAdd();
                 entity.Property(libro => libro.ISBN)
                       .IsRequired();
                 entity.Property(libro => libro.Nombre) 

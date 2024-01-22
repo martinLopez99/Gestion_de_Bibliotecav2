@@ -13,7 +13,8 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
             modelBuilder.Entity<Editorial>(entity =>
             {
                 entity.HasKey(editorial => editorial.ID);
-                entity.Property(editorial => editorial.ID);
+                entity.Property(editorial => editorial.ID)
+                       .ValueGeneratedOnAdd();
                 entity.Property(editorial => editorial.Nombre)
                       .IsRequired();
                 entity.Property(editorial => editorial.Telefono)

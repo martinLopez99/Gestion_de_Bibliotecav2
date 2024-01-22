@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using System.Threading.Tasks;
-//using System.Data.Entity.ModelConfiguration; Ver
 using Gestion_de_Bibliotecav2.Dominio;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,8 +13,8 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
             modelBuilder.Entity<Autor>(entity =>
             {
                 entity.HasKey(autor => autor.ID);
-                entity.Property(autor => autor.ID);
-                      //.HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+                entity.Property(autor => autor.ID)
+                      .ValueGeneratedOnAdd();
                 entity.Property(autor => autor.Nombre)
                       .IsRequired();
             });

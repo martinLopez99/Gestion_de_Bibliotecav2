@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Data.Entity.ModelConfiguration;
 using Gestion_de_Bibliotecav2.Dominio;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +17,8 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
             {
                 entity.HasKey(prestamo => prestamo.ID);
 
-                entity.Property(prestamo => prestamo.ID);
+                entity.Property(prestamo => prestamo.ID)
+                      .ValueGeneratedOnAdd();
 
                 entity.Property(prestamo => prestamo.FechaEntrega)
                       .IsRequired();
