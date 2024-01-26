@@ -13,6 +13,10 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private Ejemplar iEjemplar;
         private Usuario iUsuario;
 
+        public int EjemplarID { get; set; }
+        public int UsuarioID { get; set; }
+        public Notificacion Notificacion { get; set; }
+
         public Prestamo() { }
 
         public Prestamo(Usuario pUsuario, Ejemplar pEjemplar)
@@ -59,5 +63,6 @@ namespace Gestion_de_Bibliotecav2.Dominio
             get { return this.iEjemplar; }
             set { this.iEjemplar = value;}
         }
+
     }
 }

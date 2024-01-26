@@ -12,8 +12,11 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private DateTime? iFechaBaja;
 		private Boolean iDisponibilidad;
 		private Libro iLibro;
+        public virtual ICollection<Prestamo> Prestamo { get; set; } = new List<Prestamo>();
 
-		public Ejemplar() { }
+        public int LibroID { get; set; }
+
+        public Ejemplar() { }
 
 		public Ejemplar(int pCodigo, Libro pLibro)
 		{
@@ -30,7 +33,13 @@ namespace Gestion_de_Bibliotecav2.Dominio
 			set { this.iID = value; }
 		}
 
-		public int Codigo
+        public Libro Libro
+        {
+            get { return this.iLibro; }
+            set { this.iLibro = value; }
+        }
+
+        public int Codigo
 		{
 			get { return this.iCodigo; }
 			set { this.iCodigo = value; }
@@ -54,9 +63,6 @@ namespace Gestion_de_Bibliotecav2.Dominio
 			set { this.iDisponibilidad = value; }
 		}
 
-		public Libro Libro
-		{
-			get { return this.iLibro; }
-		}
+
 	}
 }

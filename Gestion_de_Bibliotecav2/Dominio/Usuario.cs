@@ -15,6 +15,8 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private string iEmail;
         private int iLibrosPrestados;
 
+        public virtual ICollection<Prestamo> Prestamo { get; set; } = new List<Prestamo>();
+
         public Usuario() { }
 
         public Usuario(int pDNI, string pNombre, string pDireccion, int pTelefono, string pEmail)

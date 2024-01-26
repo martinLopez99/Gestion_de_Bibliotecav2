@@ -10,6 +10,8 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private int iID;
         private DateTime iFechaHoraEnvio;
         private Prestamo iPrestamo;
+
+        public Prestamo Prestamo { get; set; }
         //private readonly ISmtpClient smtpClient; // Cambiando a la interfaz MailKit
 
         public Notificacion() { }
@@ -17,6 +19,24 @@ namespace Gestion_de_Bibliotecav2.Dominio
         {
             iFechaHoraEnvio = DateTime.Now;
             iPrestamo = pPrestamo;
+        }
+
+        public int ID
+        {
+            get { return this.iID; }
+            set { this.iID = value; }
+        }
+
+        public DateTime FechaHoraEnvio
+        {
+            get { return this.iFechaHoraEnvio; }
+            set { this.iFechaHoraEnvio = value; }
+        }
+
+        public Prestamo IPrestamo
+        {
+            get { return this.iPrestamo; }
+            set { this.iPrestamo = value; }
         }
 
         public void EnviarNotificacionDeVencimiento(Usuario pUsuario)
@@ -51,7 +71,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
 
                 try
                 {
-                    email.Send(fromAddress,address,asunto,body);
+                    email.Send(fromAddress, address, asunto, body);
                 }
                 catch (SmtpException ex)
                 {
@@ -64,29 +84,6 @@ namespace Gestion_de_Bibliotecav2.Dominio
             }
         }
 
-        // Getter para iFechaHoraEnvio
-        public DateTime GetFechaHoraEnvio()
-        {
-            return iFechaHoraEnvio;
-        }
-
-        // Setter para iFechaHoraEnvio
-        public void SetFechaHoraEnvio(DateTime fechaHoraEnvio)
-        {
-            iFechaHoraEnvio = fechaHoraEnvio;
-        }
-
-        // Getter para iPrestamo
-        public Prestamo GetPrestamo()
-        {
-            return iPrestamo;
-        }
-
-        // Setter para iPrestamo
-        public void SetPrestamo(Prestamo prestamo)
-        {
-            iPrestamo = prestamo;
-        }
-
     }
 }
+

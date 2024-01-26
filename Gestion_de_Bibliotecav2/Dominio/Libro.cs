@@ -14,8 +14,9 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		public Editorial iEditorial;
         public virtual ICollection<Autor> Autores { get; set; } = new List<Autor>();
         public virtual ICollection<Categoria> Categorias { get; set; } = new List<Categoria>();
+        public virtual ICollection<Ejemplar> Ejemplares { get; set; } = new List<Ejemplar>();
 
-		public int EditorialID { get; set; }
+        public int EditorialID { get; set; }
 
         //public virtual ICollection<Libro_Autor> Libro_Autor {get; set;}
         //public virtual ICollection<Libro_Categoria> Libro_Categoria { get; set; }
