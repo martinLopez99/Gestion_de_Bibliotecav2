@@ -19,7 +19,8 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-
+            //  buscar editorial por nombre
+            // cargar coincidencias en la tabla
         }
     }
 }

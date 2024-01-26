@@ -28,231 +28,221 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelTabla = new System.Windows.Forms.Panel();
-            this.textBusqueda = new System.Windows.Forms.TextBox();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.labelIngrese = new System.Windows.Forms.Label();
-            this.buttonEliminar = new System.Windows.Forms.Button();
-            this.buttonNuevo = new System.Windows.Forms.Button();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaPublicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editorial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelTabla.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            panelTabla = new Panel();
+            textBusqueda = new TextBox();
+            buttonBuscar = new Button();
+            labelIngrese = new Label();
+            buttonEliminar = new Button();
+            buttonNuevo = new Button();
+            gridLibros = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
+            isbn = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
+            autor = new DataGridViewTextBoxColumn();
+            fechaPublicacion = new DataGridViewTextBoxColumn();
+            editorial = new DataGridViewTextBoxColumn();
+            categoria = new DataGridViewTextBoxColumn();
+            panelTabla.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridLibros).BeginInit();
+            SuspendLayout();
             // 
             // panelTabla
             // 
-            this.panelTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
-            this.panelTabla.Controls.Add(this.textBusqueda);
-            this.panelTabla.Controls.Add(this.buttonBuscar);
-            this.panelTabla.Controls.Add(this.labelIngrese);
-            this.panelTabla.Controls.Add(this.buttonEliminar);
-            this.panelTabla.Controls.Add(this.buttonNuevo);
-            this.panelTabla.Controls.Add(this.dataGrid);
-            this.panelTabla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTabla.Location = new System.Drawing.Point(0, 0);
-            this.panelTabla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelTabla.Name = "panelTabla";
-            this.panelTabla.Size = new System.Drawing.Size(686, 411);
-            this.panelTabla.TabIndex = 1;
+            panelTabla.BackColor = Color.FromArgb(46, 61, 66);
+            panelTabla.Controls.Add(textBusqueda);
+            panelTabla.Controls.Add(buttonBuscar);
+            panelTabla.Controls.Add(labelIngrese);
+            panelTabla.Controls.Add(buttonEliminar);
+            panelTabla.Controls.Add(buttonNuevo);
+            panelTabla.Controls.Add(gridLibros);
+            panelTabla.Dock = DockStyle.Fill;
+            panelTabla.Location = new Point(0, 0);
+            panelTabla.Margin = new Padding(2);
+            panelTabla.Name = "panelTabla";
+            panelTabla.Size = new Size(800, 474);
+            panelTabla.TabIndex = 1;
             // 
             // textBusqueda
             // 
-            this.textBusqueda.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBusqueda.Location = new System.Drawing.Point(324, 35);
-            this.textBusqueda.Margin = new System.Windows.Forms.Padding(1);
-            this.textBusqueda.Name = "textBusqueda";
-            this.textBusqueda.Size = new System.Drawing.Size(244, 20);
-            this.textBusqueda.TabIndex = 6;
+            textBusqueda.BackColor = Color.Gainsboro;
+            textBusqueda.Location = new Point(378, 40);
+            textBusqueda.Margin = new Padding(1);
+            textBusqueda.Name = "textBusqueda";
+            textBusqueda.Size = new Size(284, 23);
+            textBusqueda.TabIndex = 6;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBuscar.Location = new System.Drawing.Point(578, 32);
-            this.buttonBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(76, 21);
-            this.buttonBuscar.TabIndex = 5;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            buttonBuscar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonBuscar.Location = new Point(674, 37);
+            buttonBuscar.Margin = new Padding(2);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(89, 24);
+            buttonBuscar.TabIndex = 5;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click;
             // 
             // labelIngrese
             // 
-            this.labelIngrese.AutoSize = true;
-            this.labelIngrese.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelIngrese.ForeColor = System.Drawing.Color.Snow;
-            this.labelIngrese.Location = new System.Drawing.Point(200, 35);
-            this.labelIngrese.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelIngrese.Name = "labelIngrese";
-            this.labelIngrese.Size = new System.Drawing.Size(121, 17);
-            this.labelIngrese.TabIndex = 4;
-            this.labelIngrese.Text = "Ingrese un campo";
+            labelIngrese.AutoSize = true;
+            labelIngrese.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelIngrese.ForeColor = Color.Snow;
+            labelIngrese.Location = new Point(233, 40);
+            labelIngrese.Margin = new Padding(2, 0, 2, 0);
+            labelIngrese.Name = "labelIngrese";
+            labelIngrese.Size = new Size(121, 17);
+            labelIngrese.TabIndex = 4;
+            labelIngrese.Text = "Ingrese un campo";
             // 
             // buttonEliminar
             // 
-            this.buttonEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonEliminar.Location = new System.Drawing.Point(29, 129);
-            this.buttonEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(146, 33);
-            this.buttonEliminar.TabIndex = 3;
-            this.buttonEliminar.Text = "Eliminar Libro";
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            buttonEliminar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEliminar.Location = new Point(34, 149);
+            buttonEliminar.Margin = new Padding(2);
+            buttonEliminar.Name = "buttonEliminar";
+            buttonEliminar.Size = new Size(170, 38);
+            buttonEliminar.TabIndex = 3;
+            buttonEliminar.Text = "Eliminar Libro";
+            buttonEliminar.UseVisualStyleBackColor = true;
+            buttonEliminar.Click += buttonEliminar_Click;
             // 
             // buttonNuevo
             // 
-            this.buttonNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonNuevo.Location = new System.Drawing.Point(29, 70);
-            this.buttonNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(146, 33);
-            this.buttonNuevo.TabIndex = 1;
-            this.buttonNuevo.Text = "Nuevo Libro";
-            this.buttonNuevo.UseVisualStyleBackColor = true;
-            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            buttonNuevo.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonNuevo.Location = new Point(34, 81);
+            buttonNuevo.Margin = new Padding(2);
+            buttonNuevo.Name = "buttonNuevo";
+            buttonNuevo.Size = new Size(170, 38);
+            buttonNuevo.TabIndex = 1;
+            buttonNuevo.Text = "Nuevo Libro";
+            buttonNuevo.UseVisualStyleBackColor = true;
+            buttonNuevo.Click += buttonNuevo_Click;
             // 
-            // dataGrid
+            // gridLibros
             // 
-            this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGrid.ColumnHeadersHeight = 25;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.isbn,
-            this.nombre,
-            this.autor,
-            this.fechaPublicacion,
-            this.editorial,
-            this.categoria});
-            this.dataGrid.EnableHeadersVisualStyles = false;
-            this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(57)))));
-            this.dataGrid.Location = new System.Drawing.Point(202, 70);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGrid.Name = "dataGrid";
-            this.dataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGrid.RowHeadersVisible = false;
-            this.dataGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGrid.RowTemplate.Height = 24;
-            this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid.Size = new System.Drawing.Size(452, 310);
-            this.dataGrid.TabIndex = 0;
+            gridLibros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            gridLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            gridLibros.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            gridLibros.BackgroundColor = Color.FromArgb(37, 52, 57);
+            gridLibros.BorderStyle = BorderStyle.None;
+            gridLibros.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            gridLibros.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(30, 45, 57);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Gainsboro;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            gridLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            gridLibros.ColumnHeadersHeight = 25;
+            gridLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            gridLibros.Columns.AddRange(new DataGridViewColumn[] { id, isbn, nombre, autor, fechaPublicacion, editorial, categoria });
+            gridLibros.EnableHeadersVisualStyles = false;
+            gridLibros.GridColor = Color.FromArgb(30, 45, 57);
+            gridLibros.Location = new Point(236, 81);
+            gridLibros.Margin = new Padding(2);
+            gridLibros.Name = "gridLibros";
+            gridLibros.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(37, 52, 57);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            gridLibros.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            gridLibros.RowHeadersVisible = false;
+            gridLibros.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(37, 52, 57);
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Gainsboro;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(224, 224, 224);
+            gridLibros.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            gridLibros.RowTemplate.Height = 24;
+            gridLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridLibros.Size = new Size(527, 358);
+            gridLibros.TabIndex = 0;
             // 
             // id
             // 
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 44;
+            id.HeaderText = "ID";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 44;
             // 
             // isbn
             // 
-            this.isbn.HeaderText = "ISBN";
-            this.isbn.MinimumWidth = 6;
-            this.isbn.Name = "isbn";
-            this.isbn.ReadOnly = true;
-            this.isbn.Width = 59;
+            isbn.HeaderText = "ISBN";
+            isbn.MinimumWidth = 6;
+            isbn.Name = "isbn";
+            isbn.ReadOnly = true;
+            isbn.Width = 59;
             // 
             // nombre
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 73;
+            nombre.HeaderText = "Nombre";
+            nombre.MinimumWidth = 6;
+            nombre.Name = "nombre";
+            nombre.ReadOnly = true;
+            nombre.Width = 73;
             // 
             // autor
             // 
-            this.autor.HeaderText = "Autor";
-            this.autor.MinimumWidth = 6;
-            this.autor.Name = "autor";
-            this.autor.ReadOnly = true;
-            this.autor.Width = 61;
+            autor.HeaderText = "Autor";
+            autor.MinimumWidth = 6;
+            autor.Name = "autor";
+            autor.ReadOnly = true;
+            autor.Width = 61;
             // 
             // fechaPublicacion
             // 
-            this.fechaPublicacion.HeaderText = "Fecha de Publicación";
-            this.fechaPublicacion.MinimumWidth = 6;
-            this.fechaPublicacion.Name = "fechaPublicacion";
-            this.fechaPublicacion.ReadOnly = true;
-            this.fechaPublicacion.Width = 151;
+            fechaPublicacion.HeaderText = "Fecha de Publicación";
+            fechaPublicacion.MinimumWidth = 6;
+            fechaPublicacion.Name = "fechaPublicacion";
+            fechaPublicacion.ReadOnly = true;
+            fechaPublicacion.Width = 151;
             // 
             // editorial
             // 
-            this.editorial.HeaderText = "Editorial";
-            this.editorial.MinimumWidth = 6;
-            this.editorial.Name = "editorial";
-            this.editorial.ReadOnly = true;
-            this.editorial.Width = 77;
+            editorial.HeaderText = "Editorial";
+            editorial.MinimumWidth = 6;
+            editorial.Name = "editorial";
+            editorial.ReadOnly = true;
+            editorial.Width = 77;
             // 
             // categoria
             // 
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.MinimumWidth = 6;
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Width = 85;
+            categoria.HeaderText = "Categoria";
+            categoria.MinimumWidth = 6;
+            categoria.Name = "categoria";
+            categoria.ReadOnly = true;
+            categoria.Width = 85;
             // 
             // GestionLibroForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 411);
-            this.Controls.Add(this.panelTabla);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "GestionLibroForm";
-            this.Text = "Gestión de Libros";
-            this.panelTabla.ResumeLayout(false);
-            this.panelTabla.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 474);
+            Controls.Add(panelTabla);
+            Margin = new Padding(2);
+            Name = "GestionLibroForm";
+            Text = "Gestión de Libros";
+            panelTabla.ResumeLayout(false);
+            panelTabla.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gridLibros).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Panel panelTabla;
-        private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.DataGridView gridLibros;
         private System.Windows.Forms.Button buttonEliminar;
         private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.Button buttonBuscar;

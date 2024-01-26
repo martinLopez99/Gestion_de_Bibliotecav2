@@ -19,7 +19,8 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-
+            //método que busca las categorias que coinciden con el campo ingresado
+            // método que carga en la tabla con las coincidencias
         }
     }
 }

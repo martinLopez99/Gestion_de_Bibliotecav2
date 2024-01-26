@@ -56,5 +56,15 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
         {
             Close();
         }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            string dni = textBoxDNI.Text;
+            string nombre = textBoxNombre.Text;
+            string direccion = textBoxDireccion.Text;
+            string telefono = textBoxTelefono.Text;
+            string email = textBoxEmail.Text;
+            //metodo que guarda lo que se modifico
+        }
     }
 }

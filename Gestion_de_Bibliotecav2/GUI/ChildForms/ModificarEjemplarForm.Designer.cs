@@ -29,205 +29,204 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarEjemplarForm));
-            this.panelBanner = new System.Windows.Forms.Panel();
-            this.labelTitulo = new System.Windows.Forms.Label();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelBotones = new System.Windows.Forms.Panel();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonAceptar = new System.Windows.Forms.Button();
-            this.panelCampos = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelCodigo = new System.Windows.Forms.Label();
-            this.panelBanner.SuspendLayout();
-            this.panelBotones.SuspendLayout();
-            this.panelCampos.SuspendLayout();
-            this.SuspendLayout();
+            panelBanner = new Panel();
+            labelTitulo = new Label();
+            panelLogo = new Panel();
+            panelBotones = new Panel();
+            buttonCancelar = new Button();
+            buttonAceptar = new Button();
+            panelCampos = new Panel();
+            comboBoxDisponibilidad = new ComboBox();
+            textBoxFechaBaja = new TextBox();
+            textBoxFechaAlta = new TextBox();
+            textBoxCodigo = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            labelCodigo = new Label();
+            panelBanner.SuspendLayout();
+            panelBotones.SuspendLayout();
+            panelCampos.SuspendLayout();
+            SuspendLayout();
             // 
             // panelBanner
             // 
-            this.panelBanner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            this.panelBanner.Controls.Add(this.labelTitulo);
-            this.panelBanner.Controls.Add(this.panelLogo);
-            this.panelBanner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBanner.Location = new System.Drawing.Point(0, 0);
-            this.panelBanner.Name = "panelBanner";
-            this.panelBanner.Size = new System.Drawing.Size(800, 77);
-            this.panelBanner.TabIndex = 0;
-            this.panelBanner.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBanner_MouseDown);
+            panelBanner.BackColor = Color.FromArgb(37, 52, 57);
+            panelBanner.Controls.Add(labelTitulo);
+            panelBanner.Controls.Add(panelLogo);
+            panelBanner.Dock = DockStyle.Top;
+            panelBanner.Location = new Point(0, 0);
+            panelBanner.Name = "panelBanner";
+            panelBanner.Size = new Size(700, 72);
+            panelBanner.TabIndex = 0;
+            panelBanner.MouseDown += panelBanner_MouseDown;
             // 
             // labelTitulo
             // 
-            this.labelTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelTitulo.AutoSize = true;
-            this.labelTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelTitulo.Location = new System.Drawing.Point(295, 42);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(250, 32);
-            this.labelTitulo.TabIndex = 1;
-            this.labelTitulo.Text = "Modificar Ejemplar";
-            this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTitulo.Anchor = AnchorStyles.Top;
+            labelTitulo.AutoSize = true;
+            labelTitulo.FlatStyle = FlatStyle.Flat;
+            labelTitulo.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTitulo.ForeColor = Color.Gainsboro;
+            labelTitulo.Location = new Point(258, 39);
+            labelTitulo.Name = "labelTitulo";
+            labelTitulo.Size = new Size(193, 26);
+            labelTitulo.TabIndex = 1;
+            labelTitulo.Text = "Modificar Ejemplar";
+            labelTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelLogo
             // 
-            this.panelLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLogo.BackgroundImage")));
-            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(130, 77);
-            this.panelLogo.TabIndex = 0;
+            panelLogo.BackgroundImage = (Image)resources.GetObject("panelLogo.BackgroundImage");
+            panelLogo.BackgroundImageLayout = ImageLayout.Center;
+            panelLogo.Dock = DockStyle.Left;
+            panelLogo.Location = new Point(0, 0);
+            panelLogo.Name = "panelLogo";
+            panelLogo.Size = new Size(114, 72);
+            panelLogo.TabIndex = 0;
             // 
             // panelBotones
             // 
-            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            this.panelBotones.Controls.Add(this.buttonCancelar);
-            this.panelBotones.Controls.Add(this.buttonAceptar);
-            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotones.Location = new System.Drawing.Point(0, 401);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(800, 49);
-            this.panelBotones.TabIndex = 1;
-            this.panelBotones.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBotones_MouseDown);
+            panelBotones.BackColor = Color.FromArgb(37, 52, 57);
+            panelBotones.Controls.Add(buttonCancelar);
+            panelBotones.Controls.Add(buttonAceptar);
+            panelBotones.Dock = DockStyle.Bottom;
+            panelBotones.Location = new Point(0, 376);
+            panelBotones.Name = "panelBotones";
+            panelBotones.Size = new Size(700, 46);
+            panelBotones.TabIndex = 1;
+            panelBotones.MouseDown += panelBotones_MouseDown;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonCancelar.Location = new System.Drawing.Point(698, 14);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancelar.TabIndex = 1;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
+            buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancelar.FlatStyle = FlatStyle.System;
+            buttonCancelar.Location = new Point(611, 13);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(66, 22);
+            buttonCancelar.TabIndex = 1;
+            buttonCancelar.Text = "Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
             // 
             // buttonAceptar
             // 
-            this.buttonAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonAceptar.Location = new System.Drawing.Point(598, 14);
-            this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(75, 23);
-            this.buttonAceptar.TabIndex = 0;
-            this.buttonAceptar.Text = "Aceptar";
-            this.buttonAceptar.UseVisualStyleBackColor = true;
+            buttonAceptar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAceptar.FlatStyle = FlatStyle.System;
+            buttonAceptar.Location = new Point(523, 13);
+            buttonAceptar.Name = "buttonAceptar";
+            buttonAceptar.Size = new Size(66, 22);
+            buttonAceptar.TabIndex = 0;
+            buttonAceptar.Text = "Aceptar";
+            buttonAceptar.UseVisualStyleBackColor = true;
             // 
             // panelCampos
             // 
-            this.panelCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
-            this.panelCampos.Controls.Add(this.comboBox1);
-            this.panelCampos.Controls.Add(this.textBox3);
-            this.panelCampos.Controls.Add(this.textBox2);
-            this.panelCampos.Controls.Add(this.textBox1);
-            this.panelCampos.Controls.Add(this.label3);
-            this.panelCampos.Controls.Add(this.label2);
-            this.panelCampos.Controls.Add(this.label1);
-            this.panelCampos.Controls.Add(this.labelCodigo);
-            this.panelCampos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCampos.Location = new System.Drawing.Point(0, 77);
-            this.panelCampos.Name = "panelCampos";
-            this.panelCampos.Size = new System.Drawing.Size(800, 324);
-            this.panelCampos.TabIndex = 2;
-            this.panelCampos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCampos_MouseDown);
+            panelCampos.BackColor = Color.FromArgb(46, 61, 66);
+            panelCampos.Controls.Add(comboBoxDisponibilidad);
+            panelCampos.Controls.Add(textBoxFechaBaja);
+            panelCampos.Controls.Add(textBoxFechaAlta);
+            panelCampos.Controls.Add(textBoxCodigo);
+            panelCampos.Controls.Add(label3);
+            panelCampos.Controls.Add(label2);
+            panelCampos.Controls.Add(label1);
+            panelCampos.Controls.Add(labelCodigo);
+            panelCampos.Dock = DockStyle.Fill;
+            panelCampos.Location = new Point(0, 72);
+            panelCampos.Name = "panelCampos";
+            panelCampos.Size = new Size(700, 304);
+            panelCampos.TabIndex = 2;
+            panelCampos.MouseDown += panelCampos_MouseDown;
             // 
-            // comboBox1
+            // comboBoxDisponibilidad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(396, 227);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 24);
-            this.comboBox1.TabIndex = 14;
+            comboBoxDisponibilidad.FormattingEnabled = true;
+            comboBoxDisponibilidad.Location = new Point(346, 213);
+            comboBoxDisponibilidad.Name = "comboBoxDisponibilidad";
+            comboBoxDisponibilidad.Size = new Size(142, 23);
+            comboBoxDisponibilidad.TabIndex = 14;
             // 
-            // textBox3
+            // textBoxFechaBaja
             // 
-            this.textBox3.Location = new System.Drawing.Point(396, 167);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 22);
-            this.textBox3.TabIndex = 12;
+            textBoxFechaBaja.Location = new Point(346, 157);
+            textBoxFechaBaja.Name = "textBoxFechaBaja";
+            textBoxFechaBaja.Size = new Size(171, 23);
+            textBoxFechaBaja.TabIndex = 12;
             // 
-            // textBox2
+            // textBoxFechaAlta
             // 
-            this.textBox2.Location = new System.Drawing.Point(396, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 22);
-            this.textBox2.TabIndex = 11;
+            textBoxFechaAlta.Location = new Point(346, 102);
+            textBoxFechaAlta.Name = "textBoxFechaAlta";
+            textBoxFechaAlta.Size = new Size(168, 23);
+            textBoxFechaAlta.TabIndex = 11;
             // 
-            // textBox1
+            // textBoxCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(396, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 10;
+            textBoxCodigo.Location = new Point(346, 50);
+            textBoxCodigo.Name = "textBoxCodigo";
+            textBoxCodigo.Size = new Size(88, 23);
+            textBoxCodigo.TabIndex = 10;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ForeColor = System.Drawing.Color.Snow;
-            this.label3.Location = new System.Drawing.Point(239, 169);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 20);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Fecha de Baja";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.Snow;
+            label3.Location = new Point(209, 158);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 17);
+            label3.TabIndex = 8;
+            label3.Text = "Fecha de Baja";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(242, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Disponibilidad";
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Snow;
+            label2.Location = new Point(212, 213);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 17);
+            label2.TabIndex = 7;
+            label2.Text = "Disponibilidad";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(244, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Fecha de Alta";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Snow;
+            label1.Location = new Point(214, 104);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 17);
+            label1.TabIndex = 6;
+            label1.Text = "Fecha de Alta";
             // 
             // labelCodigo
             // 
-            this.labelCodigo.AutoSize = true;
-            this.labelCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelCodigo.ForeColor = System.Drawing.Color.Snow;
-            this.labelCodigo.Location = new System.Drawing.Point(295, 53);
-            this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(61, 20);
-            this.labelCodigo.TabIndex = 5;
-            this.labelCodigo.Text = "Código";
+            labelCodigo.AutoSize = true;
+            labelCodigo.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCodigo.ForeColor = Color.Snow;
+            labelCodigo.Location = new Point(258, 50);
+            labelCodigo.Name = "labelCodigo";
+            labelCodigo.Size = new Size(52, 17);
+            labelCodigo.TabIndex = 5;
+            labelCodigo.Text = "Código";
             // 
             // ModificarEjemplarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelCampos);
-            this.Controls.Add(this.panelBotones);
-            this.Controls.Add(this.panelBanner);
-            this.Name = "ModificarEjemplarForm";
-            this.Text = "AltaUsuarioForm";
-            this.panelBanner.ResumeLayout(false);
-            this.panelBanner.PerformLayout();
-            this.panelBotones.ResumeLayout(false);
-            this.panelCampos.ResumeLayout(false);
-            this.panelCampos.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 422);
+            Controls.Add(panelCampos);
+            Controls.Add(panelBotones);
+            Controls.Add(panelBanner);
+            Name = "ModificarEjemplarForm";
+            Text = "AltaUsuarioForm";
+            panelBanner.ResumeLayout(false);
+            panelBanner.PerformLayout();
+            panelBotones.ResumeLayout(false);
+            panelCampos.ResumeLayout(false);
+            panelCampos.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -236,9 +235,9 @@
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Panel panelCampos;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxFechaBaja;
+        private System.Windows.Forms.TextBox textBoxFechaAlta;
+        private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -246,6 +245,6 @@
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.Button buttonCancelar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxDisponibilidad;
     }
 }

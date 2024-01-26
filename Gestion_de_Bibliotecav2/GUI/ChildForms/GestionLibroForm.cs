@@ -25,12 +25,16 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
 
         private void buttonEliminar_Click(object sender, EventArgs e)
         {
-
+            // row selected tomar id 
+            // popup realmente quiere elimnar
+            // eliminar
+            // eliminar exitoso
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
-
+            // id de label
+            // busqueda por id de libros
         }
     }
 }

@@ -28,137 +28,133 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelTabla = new System.Windows.Forms.Panel();
-            this.textBusqueda = new System.Windows.Forms.TextBox();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.labelIngrese = new System.Windows.Forms.Label();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelTabla.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            panelTabla = new Panel();
+            textBusqueda = new TextBox();
+            buttonBuscar = new Button();
+            labelIngrese = new Label();
+            categoriasGrid = new DataGridView();
+            nombre = new DataGridViewTextBoxColumn();
+            panelTabla.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)categoriasGrid).BeginInit();
+            SuspendLayout();
             // 
             // panelTabla
             // 
-            this.panelTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
-            this.panelTabla.Controls.Add(this.textBusqueda);
-            this.panelTabla.Controls.Add(this.buttonBuscar);
-            this.panelTabla.Controls.Add(this.labelIngrese);
-            this.panelTabla.Controls.Add(this.dataGrid);
-            this.panelTabla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTabla.Location = new System.Drawing.Point(0, 0);
-            this.panelTabla.Name = "panelTabla";
-            this.panelTabla.Size = new System.Drawing.Size(914, 506);
-            this.panelTabla.TabIndex = 1;
+            panelTabla.BackColor = Color.FromArgb(46, 61, 66);
+            panelTabla.Controls.Add(textBusqueda);
+            panelTabla.Controls.Add(buttonBuscar);
+            panelTabla.Controls.Add(labelIngrese);
+            panelTabla.Controls.Add(categoriasGrid);
+            panelTabla.Dock = DockStyle.Fill;
+            panelTabla.Location = new Point(0, 0);
+            panelTabla.Name = "panelTabla";
+            panelTabla.Size = new Size(800, 474);
+            panelTabla.TabIndex = 1;
             // 
             // textBusqueda
             // 
-            this.textBusqueda.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBusqueda.Location = new System.Drawing.Point(313, 46);
-            this.textBusqueda.Margin = new System.Windows.Forms.Padding(1);
-            this.textBusqueda.Name = "textBusqueda";
-            this.textBusqueda.Size = new System.Drawing.Size(335, 22);
-            this.textBusqueda.TabIndex = 6;
+            textBusqueda.BackColor = Color.Gainsboro;
+            textBusqueda.Location = new Point(274, 43);
+            textBusqueda.Margin = new Padding(1);
+            textBusqueda.Name = "textBusqueda";
+            textBusqueda.Size = new Size(294, 23);
+            textBusqueda.TabIndex = 6;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBuscar.Location = new System.Drawing.Point(667, 42);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(102, 28);
-            this.buttonBuscar.TabIndex = 5;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            buttonBuscar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonBuscar.Location = new Point(584, 39);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(89, 26);
+            buttonBuscar.TabIndex = 5;
+            buttonBuscar.Text = "Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click;
             // 
             // labelIngrese
             // 
-            this.labelIngrese.AutoSize = true;
-            this.labelIngrese.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelIngrese.ForeColor = System.Drawing.Color.Snow;
-            this.labelIngrese.Location = new System.Drawing.Point(149, 46);
-            this.labelIngrese.Name = "labelIngrese";
-            this.labelIngrese.Size = new System.Drawing.Size(142, 20);
-            this.labelIngrese.TabIndex = 4;
-            this.labelIngrese.Text = "Ingrese un campo";
+            labelIngrese.AutoSize = true;
+            labelIngrese.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelIngrese.ForeColor = Color.Snow;
+            labelIngrese.Location = new Point(130, 43);
+            labelIngrese.Name = "labelIngrese";
+            labelIngrese.Size = new Size(121, 17);
+            labelIngrese.TabIndex = 4;
+            labelIngrese.Text = "Ingrese un campo";
             // 
-            // dataGrid
+            // categoriasGrid
             // 
-            this.dataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Fax", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGrid.ColumnHeadersHeight = 25;
-            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombre});
-            this.dataGrid.EnableHeadersVisualStyles = false;
-            this.dataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(45)))), ((int)(((byte)(57)))));
-            this.dataGrid.Location = new System.Drawing.Point(153, 86);
-            this.dataGrid.Name = "dataGrid";
-            this.dataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGrid.RowHeadersVisible = false;
-            this.dataGrid.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGrid.RowTemplate.Height = 24;
-            this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid.Size = new System.Drawing.Size(616, 382);
-            this.dataGrid.TabIndex = 0;
+            categoriasGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            categoriasGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            categoriasGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            categoriasGrid.BackgroundColor = Color.FromArgb(37, 52, 57);
+            categoriasGrid.BorderStyle = BorderStyle.None;
+            categoriasGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            categoriasGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(30, 45, 57);
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Gainsboro;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            categoriasGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            categoriasGrid.ColumnHeadersHeight = 25;
+            categoriasGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            categoriasGrid.Columns.AddRange(new DataGridViewColumn[] { nombre });
+            categoriasGrid.EnableHeadersVisualStyles = false;
+            categoriasGrid.GridColor = Color.FromArgb(30, 45, 57);
+            categoriasGrid.Location = new Point(134, 81);
+            categoriasGrid.Name = "categoriasGrid";
+            categoriasGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(37, 52, 57);
+            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            categoriasGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            categoriasGrid.RowHeadersVisible = false;
+            categoriasGrid.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(37, 52, 57);
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Gainsboro;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(224, 224, 224);
+            categoriasGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            categoriasGrid.RowTemplate.Height = 24;
+            categoriasGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            categoriasGrid.Size = new Size(539, 358);
+            categoriasGrid.TabIndex = 0;
             // 
             // nombre
             // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 6;
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 85;
+            nombre.HeaderText = "Nombre";
+            nombre.MinimumWidth = 6;
+            nombre.Name = "nombre";
+            nombre.Width = 73;
             // 
             // GestionCategoriaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 506);
-            this.Controls.Add(this.panelTabla);
-            this.Name = "GestionCategoriaForm";
-            this.Text = "Gestión de Categorías";
-            this.panelTabla.ResumeLayout(false);
-            this.panelTabla.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 474);
+            Controls.Add(panelTabla);
+            Name = "GestionCategoriaForm";
+            Text = "Gestión de Categorías";
+            panelTabla.ResumeLayout(false);
+            panelTabla.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)categoriasGrid).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Panel panelTabla;
-        private System.Windows.Forms.DataGridView dataGrid;
+        private System.Windows.Forms.DataGridView categoriasGrid;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Label labelIngrese;
         private System.Windows.Forms.TextBox textBusqueda;

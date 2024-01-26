@@ -49,5 +49,16 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
         {
             Close();
         }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            string codigo = textBoxCodigo.Text;
+            string fechaAlta = textBoxFechaAlta.Text;
+            string fechaBaja = textBoxFechaBaja.Text;
+            string disponibilidad = comboBoxDisponibilidad.SelectedText;
+
+            //metodo que modifica lo cargado
+        }
     }
 }
+
