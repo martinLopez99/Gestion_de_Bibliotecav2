@@ -8,8 +8,9 @@ namespace Gestion_de_Bibliotecav2.Dominio
 		private string iNombre;
 		private string iDireccion;
 		private int iTelefono;
+        public virtual ICollection<Libro> Libros { get; set; } = new List<Libro>();
 
-		public Editorial() { }
+        public Editorial() { }
 
 		public Editorial(string pNombre, string pDireccion, int pTelefono)
 		{

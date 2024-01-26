@@ -1,13 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gestion_de_Bibliotecav2.Dominio
 {
 	public class Categoria
 	{
+		[Key]
 		private int iID;
 		private string iNombre;
+        public virtual ICollection<Libro> Libros { get; set; } = new List<Libro>();
 
-		public Categoria() { }
+        public Categoria() { }
 
 		public Categoria(string pNombre)
 		{

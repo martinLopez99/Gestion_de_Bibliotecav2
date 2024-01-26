@@ -1,14 +1,19 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Relational;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gestion_de_Bibliotecav2.Dominio
 {
 	public class Autor
 	{
+		[Key]
 		private int iID;
-		private string iNombre;
+        private string iNombre;
+		public virtual ICollection<Libro> Libros { get; set; } = new List<Libro>();
 
-		public Autor(){}
+        //public virtual ICollection<Rol> Roles { get; set; } = new List<Rol>();
+        public Autor(){}
 
         public Autor(string pNombre)
 		{
