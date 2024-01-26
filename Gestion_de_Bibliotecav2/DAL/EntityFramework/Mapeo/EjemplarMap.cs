@@ -29,6 +29,9 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
                       .IsRequired();
                 entity.Property(ejemplar => ejemplar.Disponibilidad)
                       .IsRequired();
+                entity.HasOne(ejemplar => ejemplar.Libro) //OneToMany
+                      .WithMany(libro => libro.Ejemplares)
+                      .HasForeignKey(ejemplar => ejemplar.LibroID);
                 /*entity.HasOne(ejemplar => ejemplar.Libro)
                       .WithMany()
                       .HasForeignKey(ejemplar => ejemplar.Libro.ID);*/

@@ -10,6 +10,10 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
 {
     public class PrestamoMap
     {
+        public DbSet<Prestamo> Prestamos { get; set; }
+        public DbSet<Notificacion> Notificaciones { get; set; }
+
+
         private ModelBuilder modelBuilder;
 
         public PrestamoMap(ModelBuilder modelBuilder)
@@ -33,6 +37,18 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
                       .IsRequired();
 
                 entity.Property(prestamo => prestamo.FechaDevolucion);
+
+                entity.HasOne(prestamo => prestamo.Ejemplar) //OneToMany
+                      .WithMany(editorial => editorial.Prestamo)
+                      .HasForeignKey(prestamo => prestamo.EjemplarID);
+
+                entity.HasOne(prestamo => prestamo.Usuario) //OneToMany
+                      .WithMany(usuario => usuario.Prestamo)
+                      .HasForeignKey(prestamo => prestamo.UsuarioID);
+
+                entity.HasOne(prestamo => prestamo.Notificacion)
+                      .WithOne(n => n.IPrestamo)
+                      .HasForeignKey<Notificacion>(n => n.Prestamo);
 
                 /* Esta entidad no tiene que ser guardada a menos que se especifique la otra relación
                 entity.HasRequired(prestamo => prestamo.Ejemplar)
