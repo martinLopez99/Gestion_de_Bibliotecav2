@@ -25,14 +25,14 @@ namespace Gestion_de_Bibliotecav2.Servicios
 
         public void Agregar(Usuario usuario) 
         {
-            if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID){
+            if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID)){
                 repositorioUsuarios.Agregar(usuario);
             }
         }
 
         public void Actualizar(Usuario usuario)
         {
-            if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID){
+            if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID)){
                 repositorioUsuarios.Actualizar(usuario);
             }
         }
