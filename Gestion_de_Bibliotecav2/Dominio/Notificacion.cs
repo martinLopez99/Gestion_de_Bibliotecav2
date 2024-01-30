@@ -11,7 +11,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private DateTime iFechaHoraEnvio;
         private Prestamo iPrestamo;
 
-        public Prestamo Prestamo { get; set; }
+        public int PrestamoID { get; set; }
         //private readonly ISmtpClient smtpClient; // Cambiando a la interfaz MailKit
 
         public Notificacion() { }
