@@ -9,9 +9,12 @@ namespace Gestion_de_Bibliotecav2.DAL
         void Agregar(TEntidad pEntidad);
 
         void Eliminar(TEntidad pEntidad);
+        void Actualizar (TEntidad pEntidad);
 
         TEntidad Get(int pId);
 
         IEnumerable<TEntidad> GetAll();
+        bool Existe(int pId);
+
     }
 }

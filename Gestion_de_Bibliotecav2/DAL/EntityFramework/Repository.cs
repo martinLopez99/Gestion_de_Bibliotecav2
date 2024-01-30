@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {
-    public abstract class Repository<TEntidad, TDBContext> : IRepository<TEntidad> where TEntidad : class
+    public abstract class Repository<TEntidad, TDBContext> : IRepository<TEntidad> where TEntidad : class, IEntity
                                                                                    where TDBContext : DbContext
     {
         protected readonly TDBContext iDBContext;
@@ -19,6 +19,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 
             this.iDBContext = pDBContext;
         }
+
 
         public void Agregar(TEntidad pEntidad)
         {
@@ -48,6 +49,23 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
             }
 
             this.iDBContext.Set<TEntidad>().Remove(pEntidad);
+        }
+
+
+        public void Actualizar(TEntidad pEntidad)
+        {
+            if (pEntidad == null)
+            {
+                throw new ArgumentNullException(nameof(pEntidad));
+            }
+            
+            var entity = this.iDBContext.Set<TEntidad>().Find(pEntidad.Id);
+            this.iDBContext.Entry(entity).CurrentValues.SetValues(pEntidad);
+        }
+
+        public bool Existe(int pId)
+        {
+            return this.iDBContext.Set<TEntidad>().Any(e => e.Id == pId);
         }
     }
 }
