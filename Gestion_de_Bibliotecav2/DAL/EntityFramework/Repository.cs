@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {
-    public abstract class Repository<TEntidad, TDBContext> : IRepository<TEntidad> where TEntidad : class, IEntity
+    public abstract class Repository<TEntidad, TDBContext> : IRepository<TEntidad> where TEntidad : class
                                                                                    where TDBContext : DbContext
     {
         protected readonly TDBContext iDBContext;
@@ -52,20 +52,21 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
         }
 
 
-        public void Actualizar(TEntidad pEntidad)
+        public void Actualizar(int pid, TEntidad pEntidad)
         {
             if (pEntidad == null)
             {
                 throw new ArgumentNullException(nameof(pEntidad));
             }
             
-            var entity = this.iDBContext.Set<TEntidad>().Find(pEntidad.Id);
+            var entity = this.iDBContext.Set<TEntidad>().Find(pid);
             this.iDBContext.Entry(entity).CurrentValues.SetValues(pEntidad);
         }
 
         public bool Existe(int pId)
         {
-            return this.iDBContext.Set<TEntidad>().Any(e => e.Id == pId);
+            return (this.iDBContext.Set<TEntidad>().Find(pId) != null) ? true : false;
+
         }
     }
 }

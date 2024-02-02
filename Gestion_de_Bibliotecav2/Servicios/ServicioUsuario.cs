@@ -33,7 +33,7 @@ namespace Gestion_de_Bibliotecav2.Servicios
         public void Actualizar(Usuario usuario)
         {
             if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID)){
-                repositorioUsuarios.Actualizar(usuario);
+                repositorioUsuarios.Actualizar(usuario.ID,usuario);
             }
         }
 
