@@ -9,6 +9,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private int iID;
         private int iDNI;
         private string iNombre;
+        private bool iBaja;
         private int iScore;
         private string iDireccion;
         private int iTelefono;
@@ -23,6 +24,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
         {
             iDNI = pDNI;
             iNombre = pNombre;
+            iBaja = false;
             iScore = 0;
             iDireccion = pDireccion;
             iTelefono = pTelefono;
@@ -46,6 +48,11 @@ namespace Gestion_de_Bibliotecav2.Dominio
         {
             get { return this.iNombre; }
             set { this.iNombre = value; }
+        }
+        public bool Baja
+        {
+            get { return this.iBaja; }
+            set { this.iBaja = value; }
         }
 
         public int Score
