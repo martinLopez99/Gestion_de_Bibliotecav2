@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {
-    public abstract class Repository<TEntidad, TDBContext> : IRepository<TEntidad> where TEntidad : class
+    public abstract class Repository<TEntidad, TDBContext> : IRepository<TEntidad> where TEntidad : class  
                                                                                    where TDBContext : DbContext
     {
         protected readonly TDBContext iDBContext;
@@ -41,14 +42,15 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
             return this.iDBContext.Set<TEntidad>();
         }
 
-        public void Eliminar(TEntidad pEntidad)
+        public void Eliminar(int pId, TEntidad pEntidad) //La entidad que se pasa aca va a ser el objeto usuario con el atributo de baja como "TRUE"
         {
             if (pEntidad == null)
             {
                 throw new ArgumentNullException(nameof(pEntidad));
             }
 
-            this.iDBContext.Set<TEntidad>().Remove(pEntidad);
+            var entity = this.iDBContext.Set<TEntidad>().Find(pId);             //Te trae el objeto
+            this.iDBContext.Entry(entity).CurrentValues.SetValues(pEntidad);    //Setea el/los valores
         }
 
 
@@ -59,14 +61,13 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
                 throw new ArgumentNullException(nameof(pEntidad));
             }
             
-            var entity = this.iDBContext.Set<TEntidad>().Find(pid);
-            this.iDBContext.Entry(entity).CurrentValues.SetValues(pEntidad);
+            var entity = this.iDBContext.Set<TEntidad>().Find(pid);             //Te trae el objeto
+            this.iDBContext.Entry(entity).CurrentValues.SetValues(pEntidad);    //Setea el/los valores
         }
 
         public bool Existe(int pId)
         {
             return (this.iDBContext.Set<TEntidad>().Find(pId) != null) ? true : false;
-
         }
     }
 }

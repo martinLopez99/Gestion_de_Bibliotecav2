@@ -8,8 +8,8 @@ namespace Gestion_de_Bibliotecav2.DAL
     {
         void Agregar(TEntidad pEntidad);
 
-        void Eliminar(TEntidad pEntidad);
-        void Actualizar (int pid, TEntidad pEntidad);
+        void Eliminar(int pId, TEntidad pEntidad);
+        void Actualizar (int pId, TEntidad pEntidad);
 
         TEntidad Get(int pId);
 
