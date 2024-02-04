@@ -25,18 +25,31 @@ namespace Gestion_de_Bibliotecav2.Servicios
 
         public void Agregar(Usuario usuario) 
         {
-            if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID)){
+            if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID)){ //No debe existir el usuario
                 repositorioUsuarios.Agregar(usuario);
             }
+
+            throw new SystemException(); // Si no pasa por el condicional devuelvo un error (sera atrapado por el controlador)
         }
 
         public void Actualizar(Usuario usuario)
         {
-            if (usuario.ID != null && !repositorioUsuarios.Existe(usuario.ID)){
+            if (usuario.ID != null && repositorioUsuarios.Existe(usuario.ID)){ //Debe de existir el usuario
                 repositorioUsuarios.Actualizar(usuario.ID,usuario);
             }
+         
+            throw new SystemException(); // Si no pasa por el condicional devuelvo un error (sera atrapado por el controlador)
         }
 
+        public void Eliminar(Usuario usuario)
+        {
+            if (usuario.ID != null && repositorioUsuarios.Existe(usuario.ID)) //Debe de existir el usuario
+            {
+                repositorioUsuarios.Eliminar(usuario.ID, usuario);
+            }
+
+            throw new SystemException(); // Si no pasa por el condicional devuelvo un error (sera atrapado por el controlador)
+        }
 
     }
 }
