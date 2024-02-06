@@ -51,5 +51,16 @@ namespace Gestion_de_Bibliotecav2.Servicios
             throw new SystemException(); // Si no pasa por el condicional devuelvo un error (sera atrapado por el controlador)
         }
 
+
+        public void EliminarPorDni(int dni)
+        {
+            if (dni != null && repositorioUsuarios.Existe(dni)) //Debe de existir el usuario
+            {
+                repositorioUsuarios.EliminarPorDni(dni);
+            }
+
+            throw new SystemException(); // Si no pasa por el condicional devuelvo un error (sera atrapado por el controlador)
+        }
+
     }
 }
