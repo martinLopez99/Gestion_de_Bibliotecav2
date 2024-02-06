@@ -13,12 +13,12 @@ namespace Gestion_de_Bibliotecav2.Servicios
     {
         private RepositorioUsuarios repositorioUsuarios;
 
-        public Usuario findById(int id)
+        public Usuario Get(int id)
         {
             return repositorioUsuarios.Get(id);   
         }
 
-        public List<Usuario> findAll()
+        public List<Usuario> GetAll()
         {
             return (List<Usuario>) repositorioUsuarios.GetAll();
         }
