@@ -18,7 +18,6 @@
     <Folder Include="Dominio\" />
     <Folder Include="GUI\" />
     <Folder Include="Migraciones\" />
-    <Folder Include="Servicios\" />
   </ItemGroup>
 
 </Project>
