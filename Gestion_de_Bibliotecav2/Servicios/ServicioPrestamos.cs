@@ -53,6 +53,23 @@ namespace Gestion_de_Bibliotecav2.Servicios
             throw new SystemException(); // Si no pasa por el condicional devuelvo un error (sera atrapado por el controlador)
         }
 
+        public List<Prestamo> ProximosAVencerse()
+        {
+            DateTime fechaHoy = DateTime.Today;
+            DateTime fechaEnUnaSemana = fechaHoy.AddDays(7); 
+            
+            return repositorioPrestamos.buscarPorFechas(fechaHoy, fechaEnUnaSemana);
+        }
+
+        public List<Prestamo> BuscarPorCodigoEjemplar(int codigo)
+        {
+            return repositorioPrestamos.buscarPorCodigoEjemplar(codigo);
+        }
+
+        public List<Prestamo> BuscarPorNombreEjemplar(String nombre)
+        {
+            return repositorioPrestamos.buscarPorNombreEjemplar(nombre);
+        }
     }
 }
 
