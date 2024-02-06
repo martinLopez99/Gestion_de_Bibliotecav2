@@ -28,5 +28,40 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 
             return prestamosIntervalo;
         }
+
+        public List<Prestamo> buscarPorCodigoEjemplar(int codigo)
+        {
+            List<Prestamo> prestamos = (List<Prestamo>)GetAll();
+            List<Prestamo> prestamosCodigo= new List<Prestamo>();
+
+            foreach (Prestamo prestamo in prestamos)
+            {
+                if (prestamo.Ejemplar.Codigo == codigo)
+                {
+                    prestamosCodigo.Add(prestamo);
+                }
+            }
+
+            return prestamosCodigo;
+
+        }
+
+        public List<Prestamo> buscarPorNombreEjemplar(string nombre)
+        {
+            List<Prestamo> prestamos = (List<Prestamo>)GetAll();
+            List<Prestamo> prestamosNombre = new List<Prestamo>();
+
+            foreach (Prestamo prestamo in prestamos)
+            {
+                if (prestamo.Ejemplar.Libro.Nombre.Contains(nombre))
+                {
+                    prestamosNombre.Add(prestamo);
+                }
+            }
+
+            return prestamosNombre;
+
+        }
+
     }
 }
