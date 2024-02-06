@@ -22,14 +22,13 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
                 if (usuario.DNI == dni)
                 {
                     usuarioBuscado = usuario;
-                    return usuarioBuscado;
                 }
             }
 
             return usuarioBuscado;
         }
 
-        public void EliminarPorDni(int dni)
+        public void Eliminar(int dni)
         {
             Usuario usuario = obtenerPorDni(dni);
 

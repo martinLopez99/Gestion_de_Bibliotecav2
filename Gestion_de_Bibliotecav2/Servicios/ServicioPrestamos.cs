@@ -70,6 +70,29 @@ namespace Gestion_de_Bibliotecav2.Servicios
         {
             return repositorioPrestamos.buscarPorNombreEjemplar(nombre);
         }
+
+        // BUSCAR TODOS LOS PRESTAMOS  
+        // BUSCAR LO QUE COINCIDEN CON UN USUARIO
+        // DEVOLVER LOS EJEMPLARES 
+
+        public List<Ejemplar> ejemplaresUsuario(Usuario usuario)
+        {
+            List<Prestamo> prestamos = (List<Prestamo>) repositorioPrestamos.GetAll();
+            List<Ejemplar> ejemplares = (List<Ejemplar>) new List<Ejemplar>();
+
+            foreach (Prestamo prestamo in prestamos)
+            {
+                if (prestamo.Usuario == usuario)
+                {
+                    ejemplares.Add(prestamo.Ejemplar);
+                }
+            }
+
+            return ejemplares;
+
+        }
+
+
     }
 }
 

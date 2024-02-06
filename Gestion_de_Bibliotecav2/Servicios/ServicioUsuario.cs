@@ -18,6 +18,11 @@ namespace Gestion_de_Bibliotecav2.Servicios
             return repositorioUsuarios.Get(id);   
         }
 
+        public Usuario obtenerPorDni(int dni)
+        {
+            return repositorioUsuarios.obtenerPorDni(dni);
+        }
+
         public List<Usuario> GetAll()
         {
             return (List<Usuario>) repositorioUsuarios.GetAll();
@@ -52,14 +57,19 @@ namespace Gestion_de_Bibliotecav2.Servicios
         }
 
 
-        public void EliminarPorDni(int dni)
+        public void Eliminar(int dni)
         {
             if (dni != null && repositorioUsuarios.Existe(dni)) //Debe de existir el usuario
             {
-                repositorioUsuarios.EliminarPorDni(dni);
+                repositorioUsuarios.Eliminar(dni);
             }
 
             throw new SystemException(); // Si no pasa por el condicional devuelvo un error (sera atrapado por el controlador)
+        }
+
+        public bool Existe(int dni)
+        {
+            return repositorioUsuarios.Existe(dni);
         }
 
     }

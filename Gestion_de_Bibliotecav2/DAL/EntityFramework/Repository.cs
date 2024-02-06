@@ -69,5 +69,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
         {
             return (this.iDBContext.Set<TEntidad>().Find(pId) != null) ? true : false;
         }
+
+
     }
 }
