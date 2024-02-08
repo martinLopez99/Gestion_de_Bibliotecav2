@@ -49,5 +49,10 @@ namespace Gestion_de_Bibliotecav2.Controladores
         {
             return servicioUsuario.GetAll();
         }
+
+        public void Eliminar(string dni)
+        {
+            servicioUsuario.Eliminar(int.Parse(dni));
+        }
     }
 }
