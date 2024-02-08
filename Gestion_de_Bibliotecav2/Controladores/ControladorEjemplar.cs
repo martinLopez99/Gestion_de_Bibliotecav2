@@ -82,5 +82,10 @@ namespace Gestion_de_Bibliotecav2.Controladores
             Ejemplar ejemplar = new Ejemplar();
             servicioEjemplar.Eliminar(ejemplar);
         }
+
+        public List<string> BuscarEditoriales(string nombre)
+        {
+           return servicioEjemplar.BuscarEditoriales(nombre);
+        }
     }
 }
