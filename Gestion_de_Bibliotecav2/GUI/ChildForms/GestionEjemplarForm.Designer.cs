@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelTabla = new Panel();
             buttonModificar = new Button();
             textBusqueda = new TextBox();
@@ -39,11 +39,14 @@
             buttonEliminar = new Button();
             buttonNuevo = new Button();
             gridEjemplar = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
+            isbn = new DataGridViewTextBoxColumn();
             codigo = new DataGridViewTextBoxColumn();
+            nombre = new DataGridViewTextBoxColumn();
             fechaAlta = new DataGridViewTextBoxColumn();
             fechaBaja = new DataGridViewTextBoxColumn();
             disponibilidad = new DataGridViewTextBoxColumn();
+            label1 = new Label();
+            textBox1 = new TextBox();
             panelTabla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridEjemplar).BeginInit();
             SuspendLayout();
@@ -51,6 +54,8 @@
             // panelTabla
             // 
             panelTabla.BackColor = Color.FromArgb(46, 61, 66);
+            panelTabla.Controls.Add(textBox1);
+            panelTabla.Controls.Add(label1);
             panelTabla.Controls.Add(buttonModificar);
             panelTabla.Controls.Add(textBusqueda);
             panelTabla.Controls.Add(buttonBuscar);
@@ -78,16 +83,16 @@
             // textBusqueda
             // 
             textBusqueda.BackColor = Color.Gainsboro;
-            textBusqueda.Location = new Point(368, 40);
+            textBusqueda.Location = new Point(359, 40);
             textBusqueda.Margin = new Padding(1);
             textBusqueda.Name = "textBusqueda";
-            textBusqueda.Size = new Size(294, 23);
+            textBusqueda.Size = new Size(83, 23);
             textBusqueda.TabIndex = 6;
             // 
             // buttonBuscar
             // 
             buttonBuscar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonBuscar.Location = new Point(675, 38);
+            buttonBuscar.Location = new Point(683, 38);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(89, 24);
             buttonBuscar.TabIndex = 5;
@@ -104,7 +109,7 @@
             labelIngrese.Name = "labelIngrese";
             labelIngrese.Size = new Size(121, 17);
             labelIngrese.TabIndex = 4;
-            labelIngrese.Text = "Ingrese un campo";
+            labelIngrese.Text = "Ingrese un codigo";
             // 
             // buttonEliminar
             // 
@@ -137,50 +142,48 @@
             gridEjemplar.BorderStyle = BorderStyle.None;
             gridEjemplar.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             gridEjemplar.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(30, 45, 57);
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Gainsboro;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            gridEjemplar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(30, 45, 57);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.2F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            gridEjemplar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             gridEjemplar.ColumnHeadersHeight = 25;
             gridEjemplar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            gridEjemplar.Columns.AddRange(new DataGridViewColumn[] { id, codigo, fechaAlta, fechaBaja, disponibilidad });
+            gridEjemplar.Columns.AddRange(new DataGridViewColumn[] { isbn, codigo, nombre, fechaAlta, fechaBaja, disponibilidad });
             gridEjemplar.EnableHeadersVisualStyles = false;
             gridEjemplar.GridColor = Color.FromArgb(30, 45, 57);
             gridEjemplar.Location = new Point(236, 81);
             gridEjemplar.Name = "gridEjemplar";
             gridEjemplar.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(37, 52, 57);
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            gridEjemplar.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(37, 52, 57);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gridEjemplar.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gridEjemplar.RowHeadersVisible = false;
             gridEjemplar.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(37, 52, 57);
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Gainsboro;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(224, 224, 224);
-            gridEjemplar.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 52, 57);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Gainsboro;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(224, 224, 224);
+            gridEjemplar.RowsDefaultCellStyle = dataGridViewCellStyle3;
             gridEjemplar.RowTemplate.Height = 24;
             gridEjemplar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridEjemplar.Size = new Size(528, 358);
             gridEjemplar.TabIndex = 0;
             // 
-            // id
+            // isbn
             // 
-            id.HeaderText = "ID";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            id.ReadOnly = true;
-            id.Width = 44;
+            isbn.HeaderText = "ISBN";
+            isbn.Name = "isbn";
+            isbn.Width = 59;
             // 
             // codigo
             // 
@@ -189,6 +192,12 @@
             codigo.Name = "codigo";
             codigo.ReadOnly = true;
             codigo.Width = 70;
+            // 
+            // nombre
+            // 
+            nombre.HeaderText = "Nombre";
+            nombre.Name = "nombre";
+            nombre.Width = 73;
             // 
             // fechaAlta
             // 
@@ -214,6 +223,26 @@
             disponibilidad.ReadOnly = true;
             disponibilidad.Width = 110;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Snow;
+            label1.Location = new Point(458, 42);
+            label1.Name = "label1";
+            label1.Size = new Size(105, 17);
+            label1.TabIndex = 8;
+            label1.Text = "ISBN o Nombre";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Gainsboro;
+            textBox1.Location = new Point(567, 39);
+            textBox1.Margin = new Padding(1);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(99, 23);
+            textBox1.TabIndex = 9;
+            // 
             // GestionEjemplarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -237,10 +266,13 @@
         private System.Windows.Forms.Label labelIngrese;
         private System.Windows.Forms.TextBox textBusqueda;
         private System.Windows.Forms.Button buttonModificar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaBaja;
-        private System.Windows.Forms.DataGridViewTextBoxColumn disponibilidad;
+        private TextBox textBox1;
+        private Label label1;
+        private DataGridViewTextBoxColumn isbn;
+        private DataGridViewTextBoxColumn codigo;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn fechaAlta;
+        private DataGridViewTextBoxColumn fechaBaja;
+        private DataGridViewTextBoxColumn disponibilidad;
     }
 }

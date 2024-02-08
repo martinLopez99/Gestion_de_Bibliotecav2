@@ -38,11 +38,9 @@
             panelCampos = new Panel();
             comboBoxDisponibilidad = new ComboBox();
             textBoxFechaBaja = new TextBox();
-            textBoxFechaAlta = new TextBox();
             textBoxCodigo = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            label1 = new Label();
             labelCodigo = new Label();
             panelBanner.SuspendLayout();
             panelBotones.SuspendLayout();
@@ -125,11 +123,9 @@
             panelCampos.BackColor = Color.FromArgb(46, 61, 66);
             panelCampos.Controls.Add(comboBoxDisponibilidad);
             panelCampos.Controls.Add(textBoxFechaBaja);
-            panelCampos.Controls.Add(textBoxFechaAlta);
             panelCampos.Controls.Add(textBoxCodigo);
             panelCampos.Controls.Add(label3);
             panelCampos.Controls.Add(label2);
-            panelCampos.Controls.Add(label1);
             panelCampos.Controls.Add(labelCodigo);
             panelCampos.Dock = DockStyle.Fill;
             panelCampos.Location = new Point(0, 72);
@@ -141,24 +137,17 @@
             // comboBoxDisponibilidad
             // 
             comboBoxDisponibilidad.FormattingEnabled = true;
-            comboBoxDisponibilidad.Location = new Point(346, 213);
+            comboBoxDisponibilidad.Location = new Point(346, 154);
             comboBoxDisponibilidad.Name = "comboBoxDisponibilidad";
             comboBoxDisponibilidad.Size = new Size(142, 23);
             comboBoxDisponibilidad.TabIndex = 14;
             // 
             // textBoxFechaBaja
             // 
-            textBoxFechaBaja.Location = new Point(346, 157);
+            textBoxFechaBaja.Location = new Point(346, 102);
             textBoxFechaBaja.Name = "textBoxFechaBaja";
             textBoxFechaBaja.Size = new Size(171, 23);
             textBoxFechaBaja.TabIndex = 12;
-            // 
-            // textBoxFechaAlta
-            // 
-            textBoxFechaAlta.Location = new Point(346, 102);
-            textBoxFechaAlta.Name = "textBoxFechaAlta";
-            textBoxFechaAlta.Size = new Size(168, 23);
-            textBoxFechaAlta.TabIndex = 11;
             // 
             // textBoxCodigo
             // 
@@ -172,7 +161,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Snow;
-            label3.Location = new Point(209, 158);
+            label3.Location = new Point(209, 104);
             label3.Name = "label3";
             label3.Size = new Size(99, 17);
             label3.TabIndex = 8;
@@ -183,29 +172,18 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.Snow;
-            label2.Location = new Point(212, 213);
+            label2.Location = new Point(212, 160);
             label2.Name = "label2";
             label2.Size = new Size(96, 17);
             label2.TabIndex = 7;
             label2.Text = "Disponibilidad";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Snow;
-            label1.Location = new Point(214, 104);
-            label1.Name = "label1";
-            label1.Size = new Size(95, 17);
-            label1.TabIndex = 6;
-            label1.Text = "Fecha de Alta";
             // 
             // labelCodigo
             // 
             labelCodigo.AutoSize = true;
             labelCodigo.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             labelCodigo.ForeColor = Color.Snow;
-            labelCodigo.Location = new Point(258, 50);
+            labelCodigo.Location = new Point(258, 53);
             labelCodigo.Name = "labelCodigo";
             labelCodigo.Size = new Size(52, 17);
             labelCodigo.TabIndex = 5;
@@ -236,11 +214,9 @@
         private System.Windows.Forms.Panel panelCampos;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.TextBox textBoxFechaBaja;
-        private System.Windows.Forms.TextBox textBoxFechaAlta;
         private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button buttonAceptar;
