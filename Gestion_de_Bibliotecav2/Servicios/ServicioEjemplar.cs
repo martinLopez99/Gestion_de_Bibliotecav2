@@ -21,7 +21,7 @@ namespace Gestion_de_Bibliotecav2.Servicios
 
         public List<Ejemplar> GetAll()
         {
-            return (List<Ejemplar>) repositorioEjemplar.GetAll();
+            return (List<Ejemplar>)repositorioEjemplar.GetAll();
         }
 
         public void Agregar(Ejemplar ejemplar)
@@ -37,26 +37,41 @@ namespace Gestion_de_Bibliotecav2.Servicios
         public void Actualizar(Ejemplar ejemplar)
         {
             if (ejemplar.ID != null && repositorioEjemplar.Existe(ejemplar.ID))
-            { 
+            {
                 repositorioEjemplar.Actualizar(ejemplar.ID, ejemplar);
             }
 
-            throw new SystemException(); 
+            throw new SystemException();
         }
 
         public void Eliminar(Ejemplar ejemplar)
         {
-            if (ejemplar.ID != null && repositorioEjemplar.Existe(ejemplar.ID)) 
+            if (ejemplar.ID != null && repositorioEjemplar.Existe(ejemplar.ID))
             {
                 repositorioEjemplar.Eliminar(ejemplar.ID, ejemplar);
             }
 
-            throw new SystemException(); 
+            throw new SystemException();
         }
 
         public List<Ejemplar> buscarPorISBN(string isbn)
         {
             return repositorioEjemplar.buscarPorISBN(isbn);
+        }
+
+        public List<string> BuscarAutor(string nombre)
+        {
+            return repositorioEjemplar.BuscarAutor(nombre);
+        }
+
+        public List<string> BuscarCategorias(string nombre)
+        {
+            return repositorioEjemplar.BuscarCategorias(nombre);
+        }
+
+        public List<string> BuscarEditoriales(string nombre)
+        {
+            return repositorioEjemplar.BuscarEditoriales(nombre);
         }
     }
 }

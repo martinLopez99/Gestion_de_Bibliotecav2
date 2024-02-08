@@ -116,5 +116,11 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
             return buscados;
         }
 
+
+        public Ejemplar BuscarejemplarAPI(string isbn)
+        {
+            return null;
+        }
+
     }
 }

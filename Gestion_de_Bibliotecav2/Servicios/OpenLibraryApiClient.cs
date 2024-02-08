@@ -12,17 +12,16 @@ namespace Gestion_de_Bibliotecav2.Servicios
     public class OpenLibraryApiClient
     {
         private readonly HttpClient _httpClient;
-        private const string ApiBaseUrl = "https://openlibrary.org/api/";
-        private const string ApiBaseUrlSearch = "https://openlibrary.org/";
+        private const string Api = "https://openlibrary.org/search.json?";
 
         public OpenLibraryApiClient()
         {
             _httpClient = new HttpClient();
         }
 
-        public async Task<string> ObtenerInformacionLibroAsync(string isbn)
+        public async Task<string> ObtenerLibroAsync_isbn(string isbn) //CORREGIR
         {
-            string apiUrl = $"{ApiBaseUrl}books?bibkeys=ISBN:{isbn}&format=json";
+            string apiUrl = $"{Api}isbn={isbn}";
             HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
             if (response.IsSuccessStatusCode)
@@ -33,9 +32,9 @@ namespace Gestion_de_Bibliotecav2.Servicios
             return null;
         }
 
-        public async Task<List<string>> BuscarLibrosPorNombreAsync(string nombre)
+        public async Task<List<string>> ObtenerLibroAsync_nombre(string nombre) //CORREGIR
         {
-            string apiUrl = $"{ApiBaseUrlSearch}search.json?q={nombre}";
+            string apiUrl = $"{Api}q={nombre}";
             HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
             if (response.IsSuccessStatusCode)
