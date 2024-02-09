@@ -36,7 +36,6 @@
             buttonBuscar = new Button();
             labelIngrese = new Label();
             buttonEliminar = new Button();
-            buttonNuevo = new Button();
             gridLibros = new DataGridView();
             id = new DataGridViewTextBoxColumn();
             isbn = new DataGridViewTextBoxColumn();
@@ -45,6 +44,7 @@
             fechaPublicacion = new DataGridViewTextBoxColumn();
             editorial = new DataGridViewTextBoxColumn();
             categoria = new DataGridViewTextBoxColumn();
+            ejemplaresButton = new Button();
             panelTabla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridLibros).BeginInit();
             SuspendLayout();
@@ -52,11 +52,11 @@
             // panelTabla
             // 
             panelTabla.BackColor = Color.FromArgb(46, 61, 66);
+            panelTabla.Controls.Add(ejemplaresButton);
             panelTabla.Controls.Add(textBusqueda);
             panelTabla.Controls.Add(buttonBuscar);
             panelTabla.Controls.Add(labelIngrese);
             panelTabla.Controls.Add(buttonEliminar);
-            panelTabla.Controls.Add(buttonNuevo);
             panelTabla.Controls.Add(gridLibros);
             panelTabla.Dock = DockStyle.Fill;
             panelTabla.Location = new Point(0, 0);
@@ -101,7 +101,7 @@
             // buttonEliminar
             // 
             buttonEliminar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonEliminar.Location = new Point(34, 149);
+            buttonEliminar.Location = new Point(33, 81);
             buttonEliminar.Margin = new Padding(2);
             buttonEliminar.Name = "buttonEliminar";
             buttonEliminar.Size = new Size(170, 38);
@@ -109,18 +109,6 @@
             buttonEliminar.Text = "Eliminar Libro";
             buttonEliminar.UseVisualStyleBackColor = true;
             buttonEliminar.Click += buttonEliminar_Click;
-            // 
-            // buttonNuevo
-            // 
-            buttonNuevo.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonNuevo.Location = new Point(34, 81);
-            buttonNuevo.Margin = new Padding(2);
-            buttonNuevo.Name = "buttonNuevo";
-            buttonNuevo.Size = new Size(170, 38);
-            buttonNuevo.TabIndex = 1;
-            buttonNuevo.Text = "Nuevo Libro";
-            buttonNuevo.UseVisualStyleBackColor = true;
-            buttonNuevo.Click += buttonNuevo_Click;
             // 
             // gridLibros
             // 
@@ -225,6 +213,18 @@
             categoria.ReadOnly = true;
             categoria.Width = 85;
             // 
+            // ejemplaresButton
+            // 
+            ejemplaresButton.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            ejemplaresButton.Location = new Point(33, 149);
+            ejemplaresButton.Margin = new Padding(2);
+            ejemplaresButton.Name = "ejemplaresButton";
+            ejemplaresButton.Size = new Size(170, 38);
+            ejemplaresButton.TabIndex = 7;
+            ejemplaresButton.Text = "Ejemplares del Libro";
+            ejemplaresButton.UseVisualStyleBackColor = true;
+            ejemplaresButton.Click += ejemplaresButton_Click;
+            // 
             // GestionLibroForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -244,7 +244,6 @@
         private System.Windows.Forms.Panel panelTabla;
         private System.Windows.Forms.DataGridView gridLibros;
         private System.Windows.Forms.Button buttonEliminar;
-        private System.Windows.Forms.Button buttonNuevo;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Label labelIngrese;
         private System.Windows.Forms.TextBox textBusqueda;
@@ -255,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaPublicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn editorial;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
+        private Button ejemplaresButton;
     }
 }

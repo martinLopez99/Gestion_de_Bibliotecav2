@@ -21,8 +21,16 @@
 
   <ItemGroup>
     <Folder Include="DAL\EntityFramework\" />
-    <Folder Include="GUI\" />
     <Folder Include="Migraciones\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="GUI\ChildForms\EjemplaresLibroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\ChildForms\PrestamosUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

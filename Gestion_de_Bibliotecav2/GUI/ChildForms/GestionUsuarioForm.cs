@@ -50,6 +50,12 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
             }
             return cell;
         }
+
+        private void prestamosButton_Click(object sender, EventArgs e)
+        {
+            PrestamosUsuarioForm prestamosUsuarioForm = new PrestamosUsuarioForm();
+            prestamosUsuarioForm.ShowDialog(this);
+        }
     }
 }
 

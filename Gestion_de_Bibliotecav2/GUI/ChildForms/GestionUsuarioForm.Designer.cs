@@ -46,6 +46,7 @@
             telefono = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
             librosPrestados = new DataGridViewTextBoxColumn();
+            prestamosButton = new Button();
             panelTabla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridUsuario).BeginInit();
             SuspendLayout();
@@ -53,6 +54,7 @@
             // panelTabla
             // 
             panelTabla.BackColor = Color.FromArgb(46, 61, 66);
+            panelTabla.Controls.Add(prestamosButton);
             panelTabla.Controls.Add(textBusqueda);
             panelTabla.Controls.Add(buttonBuscar);
             panelTabla.Controls.Add(labelIngrese);
@@ -237,6 +239,20 @@
             librosPrestados.ReadOnly = true;
             librosPrestados.Width = 125;
             // 
+            // prestamosButton
+            // 
+            prestamosButton.Anchor = AnchorStyles.Left;
+            prestamosButton.FlatStyle = FlatStyle.System;
+            prestamosButton.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            prestamosButton.Location = new Point(34, 211);
+            prestamosButton.Margin = new Padding(2);
+            prestamosButton.Name = "prestamosButton";
+            prestamosButton.Size = new Size(170, 38);
+            prestamosButton.TabIndex = 7;
+            prestamosButton.Text = "Prestamos de Usuario";
+            prestamosButton.UseVisualStyleBackColor = true;
+            prestamosButton.Click += prestamosButton_Click;
+            // 
             // GestionUsuarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -268,5 +284,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn librosPrestados;
         private System.Windows.Forms.TextBox textBusqueda;
+        private Button prestamosButton;
     }
 }

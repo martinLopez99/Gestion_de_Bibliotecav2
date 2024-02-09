@@ -36,5 +36,11 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
             // id de label
             // busqueda por id de libros
         }
+
+        private void ejemplaresButton_Click(object sender, EventArgs e)
+        {
+            EjemplarLibroForm ejemplarLibroForm = new EjemplarLibroForm();  
+            ejemplarLibroForm.ShowDialog();
+        }
     }
 }
