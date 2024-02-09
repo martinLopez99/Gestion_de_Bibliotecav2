@@ -1,56 +1,36 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using System.Net.Http.Json;
-
 
 namespace Gestion_de_Bibliotecav2.Servicios
 {
     public class OpenLibraryApiClient
     {
         private readonly HttpClient _httpClient;
-        private const string Api = "https://openlibrary.org/search.json?";
+        private const string Api = "https://openlibrary.org/search.json";
+        private const string Filtro = "fields=title,first_publish_year,author_name,subject";
 
-        public OpenLibraryApiClient()
+        public OpenLibraryApiClient(HttpClient httpClient)
         {
-            _httpClient = new HttpClient();
+            _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         }
 
-        public async Task<string> ObtenerLibroAsync_isbn(string isbn) //CORREGIR
+        public async Task<HttpResponseMessage> ObtenerLibroAsync_isbn(string isbn)
         {
-            string apiUrl = $"{Api}isbn={isbn}";
+            string apiUrl = $"{Api}?q={isbn}&{Filtro}";
             HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
-            if (response.IsSuccessStatusCode)
-            {
-                return await response.Content.ReadAsStringAsync();
-            }
-
-            return null;
+            return response;
         }
 
-        public async Task<List<string>> ObtenerLibroAsync_nombre(string nombre) //CORREGIR
+        public async Task<HttpResponseMessage> ObtenerLibroAsync_nombre(string nombre)
         {
-            string apiUrl = $"{Api}q={nombre}";
+            string apiUrl = $"{Api}?q={nombre}&{Filtro}";
             HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
 
-            if (response.IsSuccessStatusCode)
-            {
-                // Obtener el contenido JSON como una cadena
-                string jsonResponse = await response.Content.ReadAsStringAsync();
-
-                // Imprimir el JSON completo
-                Console.WriteLine($"Respuesta JSON completa: {jsonResponse}");
-
-                // No es necesario deserializar si solo deseas imprimir el JSON
-                return new List<string>();
-            }
-
-            return new List<string>();
+            return response;
         }
-
     }
 }
