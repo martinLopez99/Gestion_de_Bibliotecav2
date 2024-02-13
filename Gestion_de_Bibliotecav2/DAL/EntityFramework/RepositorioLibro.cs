@@ -98,30 +98,37 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
         {
             foreach (Autor autor in autores)
             {
-                //DEBO ASEGURARME QUE LA ASOCIACIÓN NO EXISTA
-
-                //Aca hago la relación 
-                libro.Autores.Add(autor);   //Debo de conseguir el id
-                                            //Lo ideal seria que los metodos me devuevlan el objeto
-                                            //Guardado en la base de dato, asi lo uso para guardarlo 
-                                            //En la asociación (ya que ahora no estoy usando un obj completo *Sin id*)
-            
-                //Debo realizar lo mismo para cada autor
-                autor.Libros.Add(libro); //Relaciono a cada autor con el libro 
-
+                VerificarRelaciones(libro, autor);
             }
-            
-            //Actualizar(libro,autor); //VER
-
+            Actualizar(libro,autores);
         }
 
-        private bool Actualizar(Libro libro, Autor autor)
+        private void VerificarRelaciones(Libro libro, Autor autor)
+        {
+            // Verificar si el autor ya está asociado al libro
+            if (!libro.Autores.Contains(autor))
+            {
+                libro.Autores.Add(autor);
+            }
+
+            // Verificar si el libro ya está asociado al autor
+            if (!autor.Libros.Contains(libro))
+            {
+                autor.Libros.Add(libro);
+            }
+        }
+
+        private bool Actualizar(Libro libro, List<Autor> autores)
         {
             try
             {
-                //Actualizar requiere de un id, asi actualiza correctamente el objeto
-                //Actualizar(libro);
-                repositorioAutor.Actualizar(autor.ID,autor);
+                Actualizar(libro.ID, libro);
+
+                foreach (Autor autor in autores)
+                {
+                    // Suponiendo que cada autor tiene un ID
+                    repositorioAutor.Actualizar(autor.ID, autor);
+                }
                 return true;
             }catch (Exception e)
             {
