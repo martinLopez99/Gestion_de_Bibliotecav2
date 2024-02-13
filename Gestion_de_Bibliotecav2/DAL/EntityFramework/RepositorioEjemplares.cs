@@ -28,68 +28,6 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
             return ejemplaresEncontrados;
         }
 
-        //Búsqueda de autor por nombre (alguna parte del nombre?) y devuelve una lista para cargar en una tabla todos los resultados que coincidieron
-
-        // Búsqueda de categoría por nombre y devuelve una lista para cargar las coincidencias en una tabla.
-
-        private List<Categoria> ObtenerCategorias()
-        {
-            List<Ejemplar> ejemplares = (List<Ejemplar>)GetAll();
-            List<Categoria> categorias = new List<Categoria>();
-
-            foreach (Ejemplar ejemplar in ejemplares)
-            {
-                categorias.AddRange(ejemplar.Libro.Categorias);
-            }
-            return categorias.Distinct().ToList();
-        }
-
-        public List<string> BuscarCategorias(string nombre)  
-        {
-            List<Categoria> cateogrias = ObtenerCategorias();
-            List<string> buscados = new List<string>();
-
-            foreach (Categoria categoria in cateogrias)
-            {
-                if (categoria.Nombre.Contains(nombre))
-                {
-                    buscados.Add(categoria.Nombre);
-                }
-            }
-            return buscados;
-        }
-
-
-        // Búsqueda de editorial por nombre y devuelve una lista para cargar las coincidencias en una tabla.
-
-        private List<Editorial> ObtenerEditoriales()
-        {
-            List<Ejemplar> ejemplares = (List<Ejemplar>)GetAll();
-            List<Editorial> editoriales = new List<Editorial>();
-
-            foreach (Ejemplar ejemplar in ejemplares)
-            {
-                editoriales.Add(ejemplar.Libro.Editorial);
-            }
-            return editoriales.Distinct().ToList();
-        }
-
-        public List<string> BuscarEditoriales(string nombre)
-        {
-            List<Editorial> editoriales = ObtenerEditoriales();
-            List<string> buscados = new List<string>();
-
-            foreach (Editorial editorial in editoriales)
-            {
-                if (editorial.Nombre.Contains(nombre))
-                {
-                    buscados.Add(editorial.Nombre);
-                }
-            }
-            return buscados;
-        }
-
-
         public Ejemplar BuscarejemplarAPI(string isbn)
         {
             return null;

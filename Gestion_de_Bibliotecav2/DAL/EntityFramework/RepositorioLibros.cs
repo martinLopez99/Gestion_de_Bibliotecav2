@@ -10,14 +10,14 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {
-    public class RepositorioLibro : Repository<Dominio.Libro, AdministradorPrestamosDBContext>, IRepositorioLibro
+    public class RepositorioLibros : Repository<Dominio.Libro, AdministradorPrestamosDBContext>, IRepositorioLibros
     {
-        public RepositorioLibro(AdministradorPrestamosDBContext pDBContext) : base(pDBContext)
+        public RepositorioLibros(AdministradorPrestamosDBContext pDBContext) : base(pDBContext)
         {
 
         }
 
-        private RepositorioAutor repositorioAutor;
+        private RepositorioAutores repositorioAutor;
 
         // METODOS TODO
         // Existencia  isbn BD 

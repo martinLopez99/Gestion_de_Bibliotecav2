@@ -12,7 +12,7 @@ namespace Gestion_de_Bibliotecav2.Servicios
 {
     internal class ServicioAutor
     {
-        private RepositorioAutor repositorioAutor;
+        private RepositorioAutores repositorioAutor;
 
         public Autor Get(int id)
         {
