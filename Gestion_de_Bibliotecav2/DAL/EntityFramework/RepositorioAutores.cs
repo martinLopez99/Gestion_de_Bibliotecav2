@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {
-    public class RepositorioAutor : Repository<Dominio.Autor, AdministradorPrestamosDBContext>, IRepositorioAutor
+    public class RepositorioAutores : Repository<Dominio.Autor, AdministradorPrestamosDBContext>, IRepositorioAutores
     {
-        public RepositorioAutor(AdministradorPrestamosDBContext pDBContext) : base(pDBContext) 
+        public RepositorioAutores(AdministradorPrestamosDBContext pDBContext) : base(pDBContext) 
         {
 
         }

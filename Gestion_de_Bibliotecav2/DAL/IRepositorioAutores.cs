@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_de_Bibliotecav2.DAL
 {
-    public interface IRepositorioAutor : IRepository<Dominio.Autor>
+    public interface IRepositorioAutores : IRepository<Dominio.Autor>
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gestion_de_Bibliotecav2.DAL
+namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 {
-    public interface IRepositorioLibro : IRepository<Dominio.Libro>
+    public interface IRepositorioEditoriales : IRepository<Dominio.Editorial>
     {
     }
 }

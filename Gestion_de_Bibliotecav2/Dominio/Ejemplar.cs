@@ -12,7 +12,7 @@ namespace Gestion_de_Bibliotecav2.Dominio
         private DateTime? iFechaBaja;
 		private Boolean iDisponibilidad;
 		private Libro iLibro;
-        public virtual ICollection<Prestamo> Prestamo { get; set; } = new List<Prestamo>();
+        public virtual ICollection<Prestamo> Prestamos { get; set; } = new List<Prestamo>();
 
         public int LibroID { get; set; }
 
