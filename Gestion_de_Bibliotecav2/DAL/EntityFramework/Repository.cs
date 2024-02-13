@@ -54,7 +54,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
         }
 
 
-        public void Actualizar(int pid, TEntidad pEntidad)
+        public void Actualizar(int pid, TEntidad pEntidad) //Para fines practicos debe devovler el objeto
         {
             if (pEntidad == null)
             {

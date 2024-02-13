@@ -1,0 +1,71 @@
+﻿using Gestion_de_Bibliotecav2.Dominio;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
+{
+    public class RepositorioAutor : Repository<Dominio.Autor, AdministradorPrestamosDBContext>, IRepositorioAutor
+    {
+        public RepositorioAutor(AdministradorPrestamosDBContext pDBContext) : base(pDBContext) 
+        {
+
+        }
+    
+    
+        public bool ExisteNombre(string nombre)
+        {
+            List<Autor> autores = (List<Autor>) GetAll();
+
+            return autores.Exists(autor => autor.Nombre == nombre);
+
+        }
+
+        public Autor BuscarPorNombre(string nombre) 
+        {
+            List<Autor> autores = (List<Autor>)GetAll();
+            Autor autorBuscado = new Autor();
+
+            foreach (Autor autor in autores)
+            {
+                if (autor.Nombre == nombre)
+                {
+                    return autorBuscado = autor;
+                }
+            }
+
+            return autorBuscado;
+        }
+
+        // Esto tiene que estar en repositorio Autor
+        public List<Autor> SaveAutor(Docs doc)
+        {
+            List<Autor> autores = new List<Autor>();
+
+            if (doc != null)
+            {
+                foreach (string autor_name in doc.AuthorName)
+                {
+                    // Si existe, debo traerlo y si no, lo creo
+                    if (!ExisteNombre(autor_name))
+                    {
+                        Autor autor = new Autor(autor_name);
+                        Agregar(autor); //Debo devoler el objeto guardado, asi uso su Id
+                        // autor = Agregar(autor); //Asi aprovecho el id generado por la BD
+                        autores.Add(autor);
+                    }
+                    else
+                    {
+                        Autor autor = BuscarPorNombre(autor_name);
+                        autores.Add(autor);
+                    }
+                }
+            }
+
+            return autores;
+        }
+
+    }
+}
