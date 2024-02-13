@@ -54,9 +54,9 @@ namespace Gestion_de_Bibliotecav2.Servicios
             throw new SystemException();
         }
 
-        public Autor BuscarAutor(string nombre)
+        public List<Autor> BuscarAutoresPorCoincidencia(string nombre)
         {
-            return repositorioAutor.BuscarPorNombre(nombre);
+            return repositorioAutor.BuscarAutoresPorCoincidencia(nombre);
         }
     }
 }

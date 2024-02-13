@@ -12,15 +12,9 @@ namespace Gestion_de_Bibliotecav2.Controladores
     {
         ServicioAutor servicioAutor;
 
-        public void CrearAutor(string nombre)
+        public List<Autor> BuscarAutoresPorCoincidencia(string nombre)
         {
-            Autor autor = new Autor(nombre);
-            servicioAutor.Agregar(autor);
-        }
-
-        public Autor BuscarAutorPorNombre(string nombre)
-        {
-            return servicioAutor.BuscarAutor(nombre);
+            return servicioAutor.BuscarAutoresPorCoincidencia(nombre);
         }
     }
 }

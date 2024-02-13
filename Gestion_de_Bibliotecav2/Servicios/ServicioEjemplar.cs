@@ -59,11 +59,6 @@ namespace Gestion_de_Bibliotecav2.Servicios
             return repositorioEjemplar.buscarPorISBN(isbn);
         }
 
-        public List<string> BuscarAutor(string nombre)
-        {
-            return repositorioEjemplar.BuscarAutor(nombre);
-        }
-
         public List<string> BuscarCategorias(string nombre)
         {
             return repositorioEjemplar.BuscarCategorias(nombre);

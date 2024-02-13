@@ -30,33 +30,6 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 
         //Búsqueda de autor por nombre (alguna parte del nombre?) y devuelve una lista para cargar en una tabla todos los resultados que coincidieron
 
-        private List<Autor> ObtenerAutores()
-        {
-            List<Ejemplar> ejemplares = (List<Ejemplar>)GetAll();
-            List<Autor> autores = new List<Autor>();
-
-            foreach (Ejemplar ejemplar in ejemplares)
-            {
-                autores.AddRange(ejemplar.Libro.Autores);
-            }
-            return autores.Distinct().ToList();
-        }
-
-        public List<string> BuscarAutor(string nombre)
-        {
-            List<Autor> autores = ObtenerAutores();
-            List<string> buscados = new List<string>();
-
-            foreach (Autor autor in autores)
-            {
-                if (autor.Nombre.Contains(nombre))
-                {
-                    buscados.Add(autor.Nombre);
-                }
-            }
-            return buscados;
-        }
-
         // Búsqueda de categoría por nombre y devuelve una lista para cargar las coincidencias en una tabla.
 
         private List<Categoria> ObtenerCategorias()

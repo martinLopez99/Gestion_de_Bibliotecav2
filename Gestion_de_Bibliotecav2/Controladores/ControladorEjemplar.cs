@@ -34,11 +34,6 @@ namespace Gestion_de_Bibliotecav2.Controladores
             servicioEjemplar.Agregar(ejemplar);
         }
 
-        public List<string> BuscarAutor(string autor)
-        {
-            return servicioEjemplar.BuscarAutor(autor);
-        }
-
         public List<string> BuscarCategorias(string categoria)
         {
             return servicioEjemplar.BuscarCategorias(categoria);

@@ -13,8 +13,22 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
         {
 
         }
-    
-    
+
+        public List<Autor> BuscarAutoresPorCoincidencia(string nombre)
+        {
+            List<Autor> autores = (List<Autor>) GetAll();
+            List<Autor> buscados = new List<Autor>();
+
+            foreach (Autor autor in autores)
+            {
+                if (autor.Nombre.Contains(nombre))
+                {
+                    buscados.Add(autor);
+                }
+            }
+            return buscados;
+        }
+
         public bool ExisteNombre(string nombre)
         {
             List<Autor> autores = (List<Autor>) GetAll();
@@ -23,7 +37,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
 
         }
 
-        public Autor BuscarPorNombre(string nombre) 
+        public Autor BuscarAutorPorNombreEspecifico(string nombre) 
         {
             List<Autor> autores = (List<Autor>)GetAll();
             Autor autorBuscado = new Autor();
@@ -58,7 +72,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
                     }
                     else
                     {
-                        Autor autor = BuscarPorNombre(autor_name);
+                        Autor autor = BuscarAutorPorNombreEspecifico(autor_name);
                         autores.Add(autor);
                     }
                 }
