@@ -18,6 +18,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
         }
 
         private RepositorioAutores repositorioAutor;
+        private RepositorioCategorias repositorioCategoria;
 
         // METODOS TODO
         // Existencia  isbn BD 
@@ -68,8 +69,11 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
                             //Metodo que crea el libro y lo guarda. Que devuelva el objeto
                             Libro libro = SaveLibro(doc,isbn);
 
+                            //Metodo que crea la categoria y lo guarda. Que devuelva el objeto
+                            List<Categoria> categorias = repositorioCategoria.SaveLibro(doc);
+
                             //Metodo que asocia el libro con el autor. y tal vez el libro tambien
-                            AsociarLibroAutor(libro,autores); // Agregale Categoria
+                            AsociarLibroAutor(libro,autores,categorias); // Agregale Categoria
 
                         }
 
@@ -94,16 +98,22 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
             return BuscarPorIsbn(isbn);
         }
 
-        private void AsociarLibroAutor(Libro libro, List<Autor> autores)
+        private void AsociarLibroAutor(Libro libro, List<Autor> autores, List<Categoria> categorias)
         {
             foreach (Autor autor in autores)
             {
-                VerificarRelaciones(libro, autor);
+                VerificarRelaciones(libro, autor, null);
             }
-            Actualizar(libro,autores);
+
+            foreach (Categoria categoria in categorias)
+            {
+                VerificarRelaciones(libro, null, categoria);
+            }
+
+            Actualizar(libro,autores,categorias);
         }
 
-        private void VerificarRelaciones(Libro libro, Autor autor)
+        private void VerificarRelaciones(Libro libro, Autor autor, Categoria categoria)
         {
             // Verificar si el autor ya está asociado al libro
             if (!libro.Autores.Contains(autor))
@@ -116,9 +126,16 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
             {
                 autor.Libros.Add(libro);
             }
+
+            // Verificar si la categoría ya está asociada al libro
+            if (!libro.Categorias.Contains(categoria))
+            {
+                libro.Categorias.Add(categoria);
+            }
+
         }
 
-        private bool Actualizar(Libro libro, List<Autor> autores)
+        private bool Actualizar(Libro libro, List<Autor> autores, List<Categoria> categorias)
         {
             try
             {
@@ -129,8 +146,15 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
                     // Suponiendo que cada autor tiene un ID
                     repositorioAutor.Actualizar(autor.ID, autor);
                 }
+
+                foreach (Categoria categoria in categorias)
+                {
+                    // Suponiendo que cada categoría tiene un ID
+                    repositorioCategoria.Actualizar(categoria.ID, categoria);
+                }
                 return true;
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }

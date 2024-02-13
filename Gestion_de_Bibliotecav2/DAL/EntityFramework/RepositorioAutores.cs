@@ -62,12 +62,11 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
             {
                 foreach (string autor_name in doc.AuthorName)
                 {
-                    // Si existe, debo traerlo y si no, lo creo
                     if (!ExisteNombre(autor_name))
                     {
                         Autor autor = new Autor(autor_name);
                         Agregar(autor); //Debo devoler el objeto guardado, asi uso su Id
-                        // autor = Agregar(autor); //Asi aprovecho el id generado por la BD
+                        autor = BuscarAutorPorNombreEspecifico(autor_name); //Asi aprovecho el id generado por la BD
                         autores.Add(autor);
                     }
                     else
