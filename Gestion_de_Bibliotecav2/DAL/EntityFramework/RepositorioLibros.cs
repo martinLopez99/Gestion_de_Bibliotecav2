@@ -69,7 +69,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework
                             Libro libro = SaveLibro(doc,isbn);
 
                             //Metodo que asocia el libro con el autor. y tal vez el libro tambien
-                            AsociarLibroAutor(libro,autores);
+                            AsociarLibroAutor(libro,autores); // Agregale Categoria
 
                         }
 
