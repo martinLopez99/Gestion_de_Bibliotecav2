@@ -3,12 +3,12 @@
 Proyecto para la materia Taller de Programación perteneciente a la carrera Ingeniería en Sistemas de Información en la UTN FRCU.
 Desarrollo de Aplicación de gestión de prestamos para una biblioteca.
 
-# Materia:
+# Materia
 * Taller de Programación
-# Docentes:
+# Docentes
 * Ing. Tanga, Enzo.
 * Ing. Tripodi, Esteban.
-# Equipo:
+# Equipo
 * Lederhos, Federico    fedelederhos5@gmail.com
 * Lopez, Martin         tincho1597lopez@gmail.com
 * Valiente, Luciana     lucianagabrielavaliente@gmail.com
