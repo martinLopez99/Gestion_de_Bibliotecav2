@@ -86,5 +86,22 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
             }
             return cell;
         }
+
+        private void gridEjemplar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Obtener la fila clickeada
+                DataGridViewRow filaSeleccionada = gridEjemplar.Rows[e.RowIndex];
+
+                // Ahora puedes acceder a las celdas de la fila seleccionada
+                // Por ejemplo, para acceder al valor de la primera celda de la fila:
+                string valorCelda = filaSeleccionada.Cells[0].Value.ToString();
+
+                Libro libro = new Libro();
+
+                // Hacer algo con la fila seleccionada...
+            }
+        }
     }
 }
