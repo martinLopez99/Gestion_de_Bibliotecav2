@@ -8,11 +8,14 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion_de_Bibliotecav2.Dominio;
 
 namespace Gestion_de_Biblioteca.GUI.ChildForms
 {
     public partial class AltaEjemplarForm : Form
     {
+        Libro libro;
+
         public AltaEjemplarForm()
         {
             InitializeComponent();
@@ -53,9 +56,8 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            string isbn = obtenerSeleccionado(sender, e);
             string codigo = boxCodigo.Text;
-            // método guardar ejemplar         
+            // método guardar ejemplar        
         }
 
         private void buttonBuscar_Click(object sender, EventArgs e)
@@ -65,42 +67,19 @@ namespace Gestion_de_Biblioteca.GUI.ChildForms
 
         }
 
-        private string obtenerSeleccionado(object sender, EventArgs e)
-        {
-            string cell = null;
-            // Verificar si hay al menos una fila seleccionada
-            if (gridEjemplar.SelectedRows.Count > 0)
-            {
-                // Obtener la primera fila seleccionada (puedes ajustarlo según tus necesidades)
-                DataGridViewRow selectedRow = gridEjemplar.SelectedRows[0];
-
-                // Obtener el valor de una celda específica (por ejemplo, la primera celda en este caso)
-                object cellValue = selectedRow.Cells["isbn"].Value;
-
-                // Verificar si la celda tiene un valor antes de usarlo
-                if (cellValue == null)
-                {
-                    MessageBox.Show("La celda seleccionada está vacía.");
-                }
-                cell = cellValue.ToString();
-            }
-            return cell;
-        }
-
         private void gridEjemplar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 // Obtener la fila clickeada
                 DataGridViewRow filaSeleccionada = gridEjemplar.Rows[e.RowIndex];
-
-                // Ahora puedes acceder a las celdas de la fila seleccionada
                 // Por ejemplo, para acceder al valor de la primera celda de la fila:
-                string valorCelda = filaSeleccionada.Cells[0].Value.ToString();
+                string isbn = filaSeleccionada.Cells[0].Value.ToString();
+                string nombre = filaSeleccionada.Cells[1].Value.ToString();
+                string fechaPublicacion = filaSeleccionada.Cells[2].Value.ToString();
 
-                Libro libro = new Libro();
+                libro = new Libro(isbn, nombre, fechaPublicacion);
 
-                // Hacer algo con la fila seleccionada...
             }
         }
     }

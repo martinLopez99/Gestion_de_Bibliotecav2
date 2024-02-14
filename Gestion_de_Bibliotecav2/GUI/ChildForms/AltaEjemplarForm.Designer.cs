@@ -43,11 +43,11 @@
             boxCodigo = new TextBox();
             label1 = new Label();
             gridEjemplar = new DataGridView();
+            boxISBNoNombre = new TextBox();
+            labelIngrese = new Label();
             isbn = new DataGridViewTextBoxColumn();
             nombre = new DataGridViewTextBoxColumn();
             fechaVencimiento = new DataGridViewTextBoxColumn();
-            boxISBNoNombre = new TextBox();
-            labelIngrese = new Label();
             panelBanner.SuspendLayout();
             panelBotones.SuspendLayout();
             panelCampos.SuspendLayout();
@@ -228,30 +228,6 @@
             gridEjemplar.TabIndex = 11;
             gridEjemplar.CellClick += gridEjemplar_CellClick;
             // 
-            // isbn
-            // 
-            isbn.HeaderText = "ISBN";
-            isbn.MinimumWidth = 6;
-            isbn.Name = "isbn";
-            isbn.ReadOnly = true;
-            isbn.Width = 70;
-            // 
-            // nombre
-            // 
-            nombre.HeaderText = "NOMBRE";
-            nombre.MinimumWidth = 6;
-            nombre.Name = "nombre";
-            nombre.ReadOnly = true;
-            nombre.Width = 105;
-            // 
-            // fechaVencimiento
-            // 
-            fechaVencimiento.HeaderText = "FECHA DE PUBLICACIÓN";
-            fechaVencimiento.MinimumWidth = 6;
-            fechaVencimiento.Name = "fechaVencimiento";
-            fechaVencimiento.ReadOnly = true;
-            fechaVencimiento.Width = 230;
-            // 
             // boxISBNoNombre
             // 
             boxISBNoNombre.Location = new Point(264, 25);
@@ -271,6 +247,30 @@
             labelIngrese.Size = new Size(159, 17);
             labelIngrese.TabIndex = 5;
             labelIngrese.Text = "Ingresar ISBN o nombre";
+            // 
+            // isbn
+            // 
+            isbn.HeaderText = "ISBN";
+            isbn.MinimumWidth = 6;
+            isbn.Name = "isbn";
+            isbn.ReadOnly = true;
+            isbn.Width = 70;
+            // 
+            // nombre
+            // 
+            nombre.HeaderText = "NOMBRE";
+            nombre.MinimumWidth = 6;
+            nombre.Name = "nombre";
+            nombre.ReadOnly = true;
+            nombre.Width = 105;
+            // 
+            // fechaVencimiento
+            // 
+            fechaVencimiento.HeaderText = "AÑO DE PUBLICACIÓN";
+            fechaVencimiento.MinimumWidth = 6;
+            fechaVencimiento.Name = "fechaVencimiento";
+            fechaVencimiento.ReadOnly = true;
+            fechaVencimiento.Width = 210;
             // 
             // AltaEjemplarForm
             // 
@@ -307,8 +307,8 @@
         private System.Windows.Forms.TextBox boxCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isbn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaVencimiento;
+        private DataGridViewTextBoxColumn isbn;
+        private DataGridViewTextBoxColumn nombre;
+        private DataGridViewTextBoxColumn fechaVencimiento;
     }
 }
