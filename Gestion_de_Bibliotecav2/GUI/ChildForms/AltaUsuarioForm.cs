@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gestion_de_Bibliotecav2.Dominio;
+
 
 namespace Gestion_de_Biblioteca.GUI
 {
@@ -53,11 +55,12 @@ namespace Gestion_de_Biblioteca.GUI
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
-            string dni = textBoxDNI.Text;
+            int dni = int.Parse(textBoxDNI.Text);
             string nombreCompleto = textBoxNombre.Text;
             string direccion = textBoxDireccion.Text;
-            string telefono = textBoxTelefono.Text;
+            int telefono = int.Parse(textBoxTelefono.Text);
             string email = textBoxEmail.Text;
+            Usuario usuario = new Usuario(dni, nombreCompleto, direccion, telefono,email);
             // método que toma estas cosas y crea un nuevo usuario
         }
     }
