@@ -12,6 +12,7 @@ namespace Gestion_de_Bibliotecav2.Servicios
     internal class ServicioPrestamos
     {
         private RepositorioPrestamos repositorioPrestamos;
+        private RepositorioUsuarios repositorioUsuarios;
 
         public Prestamo findById(int id)
         {
@@ -63,12 +64,20 @@ namespace Gestion_de_Bibliotecav2.Servicios
 
         public List<Prestamo> BuscarPorCodigoEjemplar(int codigo)
         {
-            return repositorioPrestamos.buscarPorCodigoEjemplar(codigo);
+            if (codigo != null)
+            {
+                return repositorioPrestamos.buscarPorCodigoEjemplar(codigo);
+            }
+            throw new SystemException();
         }
 
         public List<Prestamo> BuscarPorNombreEjemplar(String nombre)
         {
-            return repositorioPrestamos.buscarPorNombreEjemplar(nombre);
+            if (nombre != null)
+            {
+                return repositorioPrestamos.buscarPorNombreEjemplar(nombre);
+            }
+            throw new SystemException();
         }
 
         // BUSCAR TODOS LOS PRESTAMOS  
@@ -77,22 +86,23 @@ namespace Gestion_de_Bibliotecav2.Servicios
 
         public List<Ejemplar> ejemplaresUsuario(Usuario usuario)
         {
-            List<Prestamo> prestamos = (List<Prestamo>) repositorioPrestamos.GetAll();
-            List<Ejemplar> ejemplares = (List<Ejemplar>) new List<Ejemplar>();
-
-            foreach (Prestamo prestamo in prestamos)
+            if (usuario != null && repositorioUsuarios.ExistePorDni(usuario.ID))
             {
-                if (prestamo.Usuario == usuario)
+                List<Prestamo> prestamos = (List<Prestamo>)repositorioPrestamos.GetAll();
+                List<Ejemplar> ejemplares = (List<Ejemplar>)new List<Ejemplar>();
+
+                foreach (Prestamo prestamo in prestamos)
                 {
-                    ejemplares.Add(prestamo.Ejemplar);
+                    if (prestamo.Usuario == usuario)
+                    {
+                        ejemplares.Add(prestamo.Ejemplar);
+                    }
                 }
+
+                return ejemplares;
             }
-
-            return ejemplares;
-
+            throw new SystemException();
         }
-
-
     }
 }
 

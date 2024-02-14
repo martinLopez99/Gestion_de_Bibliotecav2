@@ -12,7 +12,9 @@ namespace Gestion_de_Bibliotecav2.Servicios
 {
     public class ServicioEjemplar
     {
-        private RepositorioEjemplares repositorioEjemplar;
+        private RepositorioEjemplares repositorioEjemplar; 
+        private ServicioCategoria servicioCategoria;
+        private ServicioEditorial servicioEditorial;
 
         public Ejemplar Get(int id)
         {
@@ -59,14 +61,14 @@ namespace Gestion_de_Bibliotecav2.Servicios
             return repositorioEjemplar.buscarPorISBN(isbn);
         }
 
-        public List<string> BuscarCategorias(string nombre)
+        public List<Categoria> BuscarCategorias(string nombre) //Capaz deberiamos de dejar este metodo en el servicio Categoria
         {
-            return repositorioEjemplar.BuscarCategorias(nombre);
+            return servicioCategoria.BuscarCategoriasPorCoincidencia(nombre);
         }
 
-        public List<string> BuscarEditoriales(string nombre)
+        public List<Editorial> BuscarEditoriales(string nombre) //Capaz deberiamos de dejar este metodo en el servicio Editorial
         {
-            return repositorioEjemplar.BuscarEditoriales(nombre);
+            return servicioEditorial.BuscarEditorialesPorCoincidencia(nombre);
         }
     }
 }

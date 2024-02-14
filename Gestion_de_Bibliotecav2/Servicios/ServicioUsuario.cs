@@ -15,12 +15,20 @@ namespace Gestion_de_Bibliotecav2.Servicios
 
         public Usuario Get(int id)
         {
-            return repositorioUsuarios.Get(id);   
+            if (id != null)
+            {
+                return repositorioUsuarios.Get(id);
+            }
+            throw new SystemException();
         }
 
         public Usuario obtenerPorDni(int dni)
         {
-            return repositorioUsuarios.obtenerPorDni(dni);
+            if (dni != null)
+            {
+                return repositorioUsuarios.obtenerPorDni(dni);
+            }
+            throw new SystemException();
         }
 
         public List<Usuario> GetAll()
