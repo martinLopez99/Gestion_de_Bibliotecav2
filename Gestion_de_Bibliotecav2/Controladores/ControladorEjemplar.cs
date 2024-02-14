@@ -34,7 +34,7 @@ namespace Gestion_de_Bibliotecav2.Controladores
             servicioEjemplar.Agregar(ejemplar);
         }
 
-        public List<string> BuscarCategorias(string categoria)
+        public List<Categoria> BuscarCategorias(string categoria)
         {
             return servicioEjemplar.BuscarCategorias(categoria);
         }
@@ -78,7 +78,7 @@ namespace Gestion_de_Bibliotecav2.Controladores
             servicioEjemplar.Eliminar(ejemplar);
         }
 
-        public List<string> BuscarEditoriales(string nombre)
+        public List<Editorial> BuscarEditoriales(string nombre)
         {
            return servicioEjemplar.BuscarEditoriales(nombre);
         }
