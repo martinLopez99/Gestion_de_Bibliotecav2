@@ -39,7 +39,7 @@ namespace Gestion_de_Bibliotecav2.DAL.EntityFramework.Mapeo
                 entity.Property(prestamo => prestamo.FechaDevolucion);
 
                 entity.HasOne(prestamo => prestamo.Ejemplar) //OneToMany
-                      .WithMany(editorial => editorial.Prestamo)
+                      .WithMany(editorial => editorial.Prestamos)
                       .HasForeignKey(prestamo => prestamo.EjemplarID);
 
                 entity.HasOne(prestamo => prestamo.Usuario) //OneToMany
