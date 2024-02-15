@@ -1,5 +1,6 @@
 ﻿using Gestion_de_Bibliotecav2.Dominio;
 using Gestion_de_Bibliotecav2.Servicios;
+using Microsoft.Extensions.Logging.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +13,40 @@ namespace Gestion_de_Bibliotecav2.Controladores
     internal class ControladorUsuario
     {
         ServicioUsuario servicioUsuario;
-        public void CrearUsuario(string dni, string nombre, string direccion, string telefono, string email)
+        public void CrearUsuario(Usuario usuario)
         {
-            Usuario usuario = new Usuario(int.Parse(dni), nombre, direccion, int.Parse(telefono), email);
-            servicioUsuario.Agregar(usuario);
+            try
+            {
+                servicioUsuario.Agregar(usuario);
+                //La pantalla deberia mostrar que se guardo con exito
+
+            }
+            catch (SystemException s)
+            {
+                //La panntalla deberia mostrar que algun parametro esta mal
+            }
+            catch (Exception ex) 
+            {
+                //La panntalla deberia mostrar el siguiente error "ex.ToString()"
+            }
         }
-        public void ModificarUsuario(string dni, string nombre, string direccion, string telefono, string email)
+
+        public void ModificarUsuario(Usuario usuario)
         {
-            Usuario usuario = new Usuario(int.Parse(dni), nombre, direccion, int.Parse(telefono), email);
-            servicioUsuario.Actualizar(usuario);
+            try
+            {
+                servicioUsuario.Actualizar(usuario);
+                //La pantalla deberia mostrar que se actualizo con exito
+
+            }
+            catch (SystemException s)
+            {
+                //La panntalla deberia mostrar que algun parametro esta mal
+            }
+            catch (Exception ex)
+            {
+                //La panntalla deberia mostrar el siguiente error "ex.ToString()"
+            }
         }
 
         public bool Existe(string dni)
@@ -28,21 +54,34 @@ namespace Gestion_de_Bibliotecav2.Controladores
            return servicioUsuario.Existe(int.Parse(dni));
         }
 
-        public Usuario obtenerUsuario(string dniONombre)
+        public List<Usuario> obtenerUsuario(string dniONombre)
         {
-            Usuario usuario = new Usuario();
-            int number1 = 0;
-            bool canConvert = int.TryParse(dniONombre, out number1);
-            if (canConvert)
+            try
             {
-                usuario = servicioUsuario.obtenerPorDni(int.Parse(dniONombre));
-            }
-            else
-            {
-                // usuario = servicioUsuario.obtenerPorNombre
-            }
+                List<Usuario> usuarios = new List<Usuario> ();
+                int number1 = 0;
+                bool canConvert = int.TryParse(dniONombre, out number1);
+                if (dniONombre != null && canConvert)
+                {
+                    usuarios.Add(servicioUsuario.obtenerPorDni(int.Parse(dniONombre)));
+                }
+                else 
+                {
+                    usuarios.Add(servicioUsuario.Get(int.Parse(dniONombre)));
+                }
 
-            return usuario;
+                return usuarios;
+
+            }
+            catch (SystemException s)
+            {
+                return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            
         }
 
         public List<Usuario> GetAll()
@@ -52,7 +91,20 @@ namespace Gestion_de_Bibliotecav2.Controladores
 
         public void Eliminar(string dni)
         {
-            servicioUsuario.Eliminar(int.Parse(dni));
+            try
+            {
+                servicioUsuario.Eliminar(int.Parse(dni));
+                //La pantalla deberia mostrar que se eliminó con exito
+
+            }
+            catch (SystemException s)
+            {
+                //La panntalla deberia mostrar que algun parametro esta mal
+            }
+            catch (Exception ex)
+            {
+                //La panntalla deberia mostrar el siguiente error "ex.ToString()"
+            }
         }
     }
 }
