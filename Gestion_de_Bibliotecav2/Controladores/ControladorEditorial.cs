@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_de_Bibliotecav2.Controladores
 {
-    internal class ControladorEditorial
+    public class ControladorEditorial
     {
         ServicioEditorial servicioEditorial;
 

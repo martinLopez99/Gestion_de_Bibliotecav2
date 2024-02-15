@@ -9,7 +9,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Gestion_de_Bibliotecav2.Controladores
 {
-    internal class ControladorPrestamos
+    public class ControladorPrestamos
     {
         ServicioPrestamos servicioPrestamos = new ServicioPrestamos();
         ServicioEjemplar servicioEjemplar = new ServicioEjemplar();

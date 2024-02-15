@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_de_Bibliotecav2.Controladores
 {
-    internal class ControladorUsuario
+    public class ControladorUsuario
     {
         ServicioUsuario servicioUsuario;
         public void CrearUsuario(Usuario usuario)

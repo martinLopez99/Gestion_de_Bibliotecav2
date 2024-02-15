@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gestion_de_Bibliotecav2.Controladores
 {
-    internal class ControladorCategoria
+    public class ControladorCategoria
     {
         ServicioCategoria servicioCategoria;
 
