@@ -17,19 +17,34 @@ namespace Gestion_de_Bibliotecav2.Controladores
 
         public List<Prestamo> BuscarPrestamos(string codigoONombre)
         {
-            List<Prestamo> prestamos = new List<Prestamo>();
-            int number1 = 0;
-            bool canConvert = int.TryParse(codigoONombre, out number1);
-            if (canConvert)
+            try
             {
-               prestamos = servicioPrestamos.BuscarPorCodigoEjemplar(int.Parse(codigoONombre));
+                List<Prestamo> prestamos = new List<Prestamo>();
+                int number1 = 0;
+                bool canConvert = int.TryParse(codigoONombre, out number1);
+                if (canConvert)
+                {
+                    prestamos = servicioPrestamos.BuscarPorCodigoEjemplar(int.Parse(codigoONombre));
+                }
+                else
+                {
+                    prestamos = servicioPrestamos.BuscarPorNombreEjemplar(codigoONombre);
+                }
+
+                return prestamos;
             }
-            else
+            catch (SystemException s)
             {
-                prestamos = servicioPrestamos.BuscarPorNombreEjemplar(codigoONombre);
+                // Algun parametro esta mal (id o no existe)
+                return null;
+            }
+            catch (Exception e)
+            {
+                // Se debe mostrar este error "e.Message.ToString()"
+                return null;
             }
 
-            return prestamos;
+            
         }
 
         public void NuevoPrestamo(Ejemplar ejemplar, Usuario usuario)
@@ -45,7 +60,19 @@ namespace Gestion_de_Bibliotecav2.Controladores
 
         public void EliminarPrestatmo(Prestamo prestamo)
         {
-            servicioPrestamos.Eliminar(prestamo);
+            try
+            {
+                servicioPrestamos.Eliminar(prestamo);
+                //Mensaje de exito
+            }
+            catch (SystemException s)
+            {
+                // Algun parametro esta mal (id o no existe)
+            }
+            catch (Exception e)
+            {
+                // Se debe mostrar este error "e.Message.ToString()"
+            }
         }
 
         public void RegistrarDevolucion()

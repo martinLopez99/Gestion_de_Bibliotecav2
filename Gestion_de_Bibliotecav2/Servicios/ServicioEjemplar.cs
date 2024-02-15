@@ -56,7 +56,7 @@ namespace Gestion_de_Bibliotecav2.Servicios
             throw new SystemException();
         }
 
-        public List<Ejemplar> buscarPorISBN(string isbn)
+        public Ejemplar buscarPorISBN(string isbn)
         {
             return repositorioEjemplar.buscarPorISBN(isbn);
         }
